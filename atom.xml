@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wode Hexo Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://bin1219.github.io/"/>
+  <updated>2020-07-13T10:22:11.745Z</updated>
+  <id>https://bin1219.github.io/</id>
+  
+  <author>
+    <name>li Chengbin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo使用</title>
+    <link href="https://bin1219.github.io/2020/07/13/hexo-use/"/>
+    <id>https://bin1219.github.io/2020/07/13/hexo-use/</id>
+    <published>2020-07-13T10:21:28.481Z</published>
+    <updated>2020-07-13T10:22:11.745Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习github</title>
+    <link href="https://bin1219.github.io/2020/07/12/use-github/"/>
+    <id>https://bin1219.github.io/2020/07/12/use-github/</id>
+    <published>2020-07-12T13:21:39.946Z</published>
+    <updated>2020-07-12T13:23:57.740Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://bin1219.github.io/2020/06/22/hello-world/"/>
+    <id>https://bin1219.github.io/2020/06/22/hello-world/</id>
+    <published>2020-06-22T10:16:39.374Z</published>
+    <updated>2020-06-22T10:16:39.374Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
