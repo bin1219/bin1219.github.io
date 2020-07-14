@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bin1219.github.io/"/>
-  <updated>2020-07-13T10:22:11.745Z</updated>
+  <updated>2020-07-14T06:36:58.712Z</updated>
   <id>https://bin1219.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>软件需求分析</title>
+    <link href="https://bin1219.github.io/2020/07/14/requirement/"/>
+    <id>https://bin1219.github.io/2020/07/14/requirement/</id>
+    <published>2020-07-14T04:43:33.094Z</published>
+    <updated>2020-07-14T06:36:58.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome devtools</title>
+    <link href="https://bin1219.github.io/2020/07/14/chromedev-use/"/>
+    <id>https://bin1219.github.io/2020/07/14/chromedev-use/</id>
+    <published>2020-07-14T02:09:59.618Z</published>
+    <updated>2020-07-14T14:19:01.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hexo使用</title>

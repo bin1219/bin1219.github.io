@@ -18,16 +18,16 @@ ga('send', 'pageview');
 
 
   
-  <title>学习github | Wode Hexo Blog</title>
+  <title>Chrome devtools | Wode Hexo Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 github使用github命令git上配置github环境 1. windows 下 Git Bash Here  配置全局用户名: git config –global user.name 你的用户名(一般是github用户名)   配置全局邮箱: git config –global user.email 你的邮箱(一般是github认证邮箱)   生成ssh密钥: ssh-keygen">
+  <meta name="description" content="搜索，导航和过滤器 在任意面板进行文件检索  Ctrl+O(windows,linux)Cmd+O(mac os x)  在当前文件内搜索  Ctrl+F(windows,linux)Cmd+F(mac os x)  全局文本搜索  Ctrl+Shift+F(windows, linux)Cmd+Opt+F(mac os x)搜索支持大小写敏感和正则表达式  函数过滤器或者文件内选择器  Ctrl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习github">
-<meta property="og:url" content="https://bin1219.github.io/2020/07/12/use-github/index.html">
+<meta property="og:title" content="Chrome devtools">
+<meta property="og:url" content="https://bin1219.github.io/2020/07/14/chromedev-use/index.html">
 <meta property="og:site_name" content="Wode Hexo Blog">
-<meta property="og:description" content="1 github使用github命令git上配置github环境 1. windows 下 Git Bash Here  配置全局用户名: git config –global user.name 你的用户名(一般是github用户名)   配置全局邮箱: git config –global user.email 你的邮箱(一般是github认证邮箱)   生成ssh密钥: ssh-keygen">
-<meta property="article:published_time" content="2020-07-12T13:21:39.946Z">
-<meta property="article:modified_time" content="2020-07-12T13:23:57.740Z">
+<meta property="og:description" content="搜索，导航和过滤器 在任意面板进行文件检索  Ctrl+O(windows,linux)Cmd+O(mac os x)  在当前文件内搜索  Ctrl+F(windows,linux)Cmd+F(mac os x)  全局文本搜索  Ctrl+Shift+F(windows, linux)Cmd+Opt+F(mac os x)搜索支持大小写敏感和正则表达式  函数过滤器或者文件内选择器  Ctrl">
+<meta property="article:published_time" content="2020-07-14T02:09:59.618Z">
+<meta property="article:modified_time" content="2020-07-14T14:19:01.170Z">
 <meta property="article:author" content="li Chengbin">
 <meta name="twitter:card" content="summary">
   
@@ -78,10 +78,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-use-github" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-chromedev-use" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/12/use-github/" class="article-date">
-  <time datetime="2020-07-12T13:21:39.946Z" itemprop="datePublished">2020-07-12</time>
+    <a href="/2020/07/14/chromedev-use/" class="article-date">
+  <time datetime="2020-07-14T02:09:59.618Z" itemprop="datePublished">2020-07-14</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      学习github
+      Chrome devtools
     </h1>
   
 
@@ -100,68 +100,51 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1</p>
-<h2 id="github使用"><a href="#github使用" class="headerlink" title="github使用"></a>github使用</h2><h3 id="github命令"><a href="#github命令" class="headerlink" title="github命令"></a>github命令</h3><p>git上配置github环境</p>
-<p><strong>1. windows 下 Git Bash Here</strong></p>
-<blockquote>
-<p>配置全局用户名: git config –global user.name 你的用户名(一般是github用户名)</p>
-</blockquote>
-<blockquote>
-<p>配置全局邮箱: git config –global user.email 你的邮箱(一般是github认证邮箱)</p>
-</blockquote>
-<blockquote>
-<p>生成ssh密钥: ssh-keygen-t rsa -C 你的github认证邮箱</p>
-</blockquote>
-<p>然后在 %userprofile%/.ssh目录下有三个文件,id_rsa,id_rsa.pub,known_hosts.</p>
-<p><strong>2. git基本使用</strong></p>
-<blockquote>
-<p>从github上clone一个项目到本地: git clone ssh/https</p>
-</blockquote>
-<blockquote>
-<p>在本地初始化一个git仓库: git init</p>
-</blockquote>
-<blockquote>
-<p>添加与本地仓库联系的远程仓库: git remote add 别名 ssh/https</p>
-</blockquote>
-<p>别名为. 可以添加所有修改后的文件到缓存</p>
-<blockquote>
-<p>将修改后的内容上传到远程仓库: git push 别名 master(branch)</p>
-</blockquote>
-<blockquote>
-<p>提交修改: git commit -m ‘你的commit’</p>
-</blockquote>
-<p>这步必须,如果没会要求在git push 后输入(没提示)</p>
-<p>提交过程应该连续,commit后再修改文件将push不成功</p>
-<blockquote>
-<p>从远程仓库下载最新内容到本地仓库: git pull 别名 master(branch)</p>
-</blockquote>
-<blockquote>
-<p>删除本地仓库与远程仓库的关联: git remote rm 别名</p>
-</blockquote>
-<p><strong>3. 其他命令</strong></p>
-<blockquote>
-<p>status命令</p>
-</blockquote>
-<p>git status : 显示工作树的状态,一般有三种</p>
-<ol>
-<li>Untracked files: 未被跟踪的文件,表示是工作目录增加的文件</li>
-<li>Changes not staged for commit: 工作目录修改了文件,但是没有被添加到暂存区</li>
-<li>Changes to be committed: 添加到暂存区的文件,等待提价</li>
+        <h1 id="搜索，导航和过滤器"><a href="#搜索，导航和过滤器" class="headerlink" title="搜索，导航和过滤器"></a>搜索，导航和过滤器</h1><ol>
+<li>在任意面板进行文件检索</li>
 </ol>
-<blockquote>
-<p>reset命令</p>
-</blockquote>
-<p>git reset : 将暂存区的所有文件重置到当前分支的HEAD</p>
-<ol>
-<li>git reset <commit> files : 将暂存区的指定文件重置到指定的<commit></li>
-<li>git reset [–hard|soft|mixed|merge|keep] [<commit>]<br> mode的取值可以是hard,soft,mixed,merged,keep.<br> hard:重置暂存区与工作目录到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交,此操作危险指数较大(慎用)<br> soft:暂存区与工作目录不会变化,仅仅删除<commit>之后的所有提交并将HEAD指向该提交<br> mixed:默认的,重置暂存区到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交<br> merge与keep …<br>…</li>
+<p><kbd>Ctrl</kbd>+<kbd>O</kbd>(windows,linux)<br><kbd>Cmd</kbd>+<kbd>O</kbd>(mac os x)</p>
+<ol start="2">
+<li>在当前文件内搜索</li>
 </ol>
-<p>总结:git是工具,有好多用法,根据需要去使用,多看说明书.</p>
-
+<p><kbd>Ctrl</kbd>+<kbd>F</kbd>(windows,linux)<br><kbd>Cmd</kbd>+<kbd>F</kbd>(mac os x)</p>
+<ol start="3">
+<li>全局文本搜索</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>(windows, linux)<br><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>F</kbd>(mac os x)<br><strong>搜索支持大小写敏感和正则表达式</strong></p>
+<ol start="4">
+<li>函数过滤器或者文件内选择器</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>(windows, linux)<br><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>(max os x)</p>
+<ol start="5">
+<li>跳转到特定行号</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>L</kbd>(windows)<br><kbd>Cmd</kbd>+<kbd>L</kbd>(max os x)<br><kbd>Ctrl</kbd>+<kbd>G</kbd>(linux)</p>
+<ol start="6">
+<li>Run Command</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></p>
+<h1 id="使用控制台"><a href="#使用控制台" class="headerlink" title="使用控制台"></a>使用控制台</h1><ol>
+<li>打开命令行</li>
+</ol>
+<p><kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>J</kbd>(mac)<br><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>(windows)</p>
+<ol start="2">
+<li>清空控制台</li>
+</ol>
+<p>在javascript脚本中调用console.clear()<br><kbd>Cmd</kbd>+<kbd>K</kbd>,<kbd>^</kbd>+<kbd>L</kbd>(mac)<br><kbd>Ctrl</kbd>+<kbd>L</kbd>(windows,linux)</p>
+<ol start="3">
+<li>查看数据结构</li>
+</ol>
+<p><code>console.table()</code></p>
+<ol start="4">
+<li>监控事件</li>
+</ol>
+<p>montiorEvents()<br>结束监控事件 unmonitorEvents()</p>
+<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/12/use-github/" data-id="ckcj40utp0000j09k0qsc86vr" class="article-share-link">Share</a>
+      <a data-url="https://bin1219.github.io/2020/07/14/chromedev-use/" data-id="ckcm0w4xg0000289k7xh81l3z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,19 +153,19 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2020/07/13/hexo-use/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/14/requirement/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          hexo使用
+          软件需求分析
         
       </div>
     </a>
   
   
-    <a href="/2020/06/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/13/hexo-use/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">hexo使用</div>
     </a>
   
 </nav>
