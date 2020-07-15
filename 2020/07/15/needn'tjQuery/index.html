@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-172513940-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>jQuery and Vanilla JS | Wode Hexo Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="选择器查询  12341. &#x2F;&#x2F; jQuery  2. $(&#39;selector&#39;)  3. &#x2F;&#x2F; Vanilla  4. document.querySelectorAll(&#39;.class&#39;)  class查询  123456781. &#x2F;&#x2F;jQuery2. $(&#39;.class&#39;);3.4. &#x2F;&#x2F; Vanilla5. document.querySelectorAll(&#39;.class&#39;)6.7.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery and Vanilla JS">
+<meta property="og:url" content="https://bin1219.github.io/2020/07/15/needn'tjQuery/index.html">
+<meta property="og:site_name" content="Wode Hexo Blog">
+<meta property="og:description" content="选择器查询  12341. &#x2F;&#x2F; jQuery  2. $(&#39;selector&#39;)  3. &#x2F;&#x2F; Vanilla  4. document.querySelectorAll(&#39;.class&#39;)  class查询  123456781. &#x2F;&#x2F;jQuery2. $(&#39;.class&#39;);3.4. &#x2F;&#x2F; Vanilla5. document.querySelectorAll(&#39;.class&#39;)6.7.">
+<meta property="article:published_time" content="2020-07-15T00:12:38.972Z">
+<meta property="article:modified_time" content="2020-07-15T04:32:23.872Z">
+<meta property="article:author" content="li Chengbin">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Wode Hexo Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wode Hexo Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://bin1219.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-needn&#39;tjQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/15/needn'tjQuery/" class="article-date">
+  <time datetime="2020-07-15T00:12:38.972Z" itemprop="datePublished">2020-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery and Vanilla JS
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>选择器查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">// jQuery  </span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'selector'</span>)  </span><br><span class="line"><span class="number">3.</span> <span class="comment">// Vanilla  </span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>class查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'.class'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br><span class="line"><span class="number">6.</span></span><br><span class="line"><span class="number">7.</span> <span class="comment">// or</span></span><br><span class="line"><span class="number">8.</span> <span class="built_in">document</span>.getElementsByClassName(<span class="string">'class'</span>);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>属性查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'a[target=_blank]'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'a[target=_blank'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>后代查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.find(<span class="string">'li'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.querySelectorAll(<span class="string">'li'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p>兄弟及上下元素<br> 兄弟查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.siblings()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">[...el.parentNode.children].filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="built_in">Array</span>.from(el.parentNode.children).filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="built_in">Array</span>.prototype.filter.call(el.parentNode.children,(child)=&gt;</span><br><span class="line">	child !== el</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>iframe contents</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$iframe.contents().find(<span class="string">'.css'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">iframe.contentDocuument.querySelectorAll(<span class="string">'.css'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取data-属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.data(<span class="string">'foo'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.getAttribute(<span class="string">'data-foo'</span>)</span><br><span class="line">或</span><br><span class="line">el.dataset[<span class="string">'foo'</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p>has class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.hasClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.contains(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>toggle class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.toggleClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.toggle(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>document height</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">document</span>).height()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body</span><br><span class="line"><span class="keyword">const</span> html = <span class="built_in">document</span>.documentElement</span><br><span class="line"><span class="keyword">const</span> height = <span class="built_in">Math</span>.max(</span><br><span class="line">	body.offsetHeight,</span><br><span class="line">	body.scrollHeight,</span><br><span class="line">	html.clientHeight,</span><br><span class="line">	html.offsetHeight,</span><br><span class="line">	html.scrollHeight</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>element height</li>
+<li>position &amp; offset</li>
+<li>scroll top</li>
+</ul>
+<ol start="11">
+<li><p>remove</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.remove()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.parentNode.removeChild(el)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>text</p>
+</li>
+</ol>
+<ul>
+<li>get<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent</span><br></pre></td></tr></table></figure></li>
+<li>set<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text(string)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent = string</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="13">
+<li>html</li>
+</ol>
+<ul>
+<li><p>get</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML</span><br></pre></td></tr></table></figure></li>
+<li><p>set</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html(htmlString)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML = htmlString</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>append</p>
+</li>
+<li><p>prepend</p>
+</li>
+<li><p>insertBefore</p>
+</li>
+<li><p>insertAfter</p>
+</li>
+<li><p>is 如果匹配给定的选择器,返回true</p>
+</li>
+<li><p>clone 深拷贝被选元素(生成被选元素的副本,包含子节点,文本和属性)</p>
+</li>
+<li><p>empty 移除所有字节点</p>
+</li>
+<li><p>wrap 把每个被选元素放置在指定的HTML结构中</p>
+</li>
+<li><p>unwrap 移除被选元素的父元素的DOM结构</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bin1219.github.io/2020/07/15/needn'tjQuery/" data-id="ckcnee4xw0001l09kh68y5bkf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/15/sublime-text/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sublime快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/14/requirement/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">软件需求分析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/15/sublime-text/">sublime快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/15/needn'tjQuery/">jQuery and Vanilla JS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/requirement/">软件需求分析</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/chromedev-use/">Chrome devtools</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/hexo-use/">hexo使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 li Chengbin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

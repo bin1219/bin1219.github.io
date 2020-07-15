@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bin1219.github.io/"/>
-  <updated>2020-07-14T06:36:58.712Z</updated>
+  <updated>2020-07-15T05:25:29.448Z</updated>
   <id>https://bin1219.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sublime快捷键</title>
+    <link href="https://bin1219.github.io/2020/07/15/sublime-text/"/>
+    <id>https://bin1219.github.io/2020/07/15/sublime-text/</id>
+    <published>2020-07-15T05:08:50.709Z</published>
+    <updated>2020-07-15T05:25:29.448Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery and Vanilla JS</title>
+    <link href="https://bin1219.github.io/2020/07/15/needn&#39;tjQuery/"/>
+    <id>https://bin1219.github.io/2020/07/15/needn&#39;tjQuery/</id>
+    <published>2020-07-15T00:12:38.972Z</published>
+    <updated>2020-07-15T04:32:23.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>软件需求分析</title>
