@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bin1219.github.io/"/>
-  <updated>2020-07-21T14:24:59.441Z</updated>
+  <updated>2020-07-22T13:32:22.243Z</updated>
   <id>https://bin1219.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>qt creator快捷键</title>
+    <link href="https://bin1219.github.io/2020/07/22/qtcreator/"/>
+    <id>https://bin1219.github.io/2020/07/22/qtcreator/</id>
+    <published>2020-07-22T13:06:07.577Z</published>
+    <updated>2020-07-22T13:32:22.243Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>codeblocks快捷键</title>
