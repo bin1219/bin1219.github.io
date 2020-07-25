@@ -78,6 +78,99 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-use-github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/12/use-github/" class="article-date">
+  <time datetime="2020-07-12T13:21:39.946Z" itemprop="datePublished">2020-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/12/use-github/">学习github</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1</p>
+<h2 id="github使用"><a href="#github使用" class="headerlink" title="github使用"></a>github使用</h2><h3 id="github命令"><a href="#github命令" class="headerlink" title="github命令"></a>github命令</h3><p>git上配置github环境</p>
+<p><strong>1. windows 下 Git Bash Here</strong></p>
+<blockquote>
+<p>配置全局用户名: git config –global user.name 你的用户名(一般是github用户名)</p>
+</blockquote>
+<blockquote>
+<p>配置全局邮箱: git config –global user.email 你的邮箱(一般是github认证邮箱)</p>
+</blockquote>
+<blockquote>
+<p>生成ssh密钥: ssh-keygen-t rsa -C 你的github认证邮箱</p>
+</blockquote>
+<p>然后在 %userprofile%/.ssh目录下有三个文件,id_rsa,id_rsa.pub,known_hosts.</p>
+<p><strong>2. git基本使用</strong></p>
+<blockquote>
+<p>从github上clone一个项目到本地: git clone ssh/https</p>
+</blockquote>
+<blockquote>
+<p>在本地初始化一个git仓库: git init</p>
+</blockquote>
+<blockquote>
+<p>添加与本地仓库联系的远程仓库: git remote add 别名 ssh/https</p>
+</blockquote>
+<p>别名为. 可以添加所有修改后的文件到缓存</p>
+<blockquote>
+<p>将修改后的内容上传到远程仓库: git push 别名 master(branch)</p>
+</blockquote>
+<blockquote>
+<p>提交修改: git commit -m ‘你的commit’</p>
+</blockquote>
+<p>这步必须,如果没会要求在git push 后输入(没提示)</p>
+<p>提交过程应该连续,commit后再修改文件将push不成功</p>
+<blockquote>
+<p>从远程仓库下载最新内容到本地仓库: git pull 别名 master(branch)</p>
+</blockquote>
+<blockquote>
+<p>删除本地仓库与远程仓库的关联: git remote rm 别名</p>
+</blockquote>
+<p><strong>3. 其他命令</strong></p>
+<blockquote>
+<p>status命令</p>
+</blockquote>
+<p>git status : 显示工作树的状态,一般有三种</p>
+<ol>
+<li>Untracked files: 未被跟踪的文件,表示是工作目录增加的文件</li>
+<li>Changes not staged for commit: 工作目录修改了文件,但是没有被添加到暂存区</li>
+<li>Changes to be committed: 添加到暂存区的文件,等待提价</li>
+</ol>
+<blockquote>
+<p>reset命令</p>
+</blockquote>
+<p>git reset : 将暂存区的所有文件重置到当前分支的HEAD</p>
+<ol>
+<li>git reset <commit> files : 将暂存区的指定文件重置到指定的<commit></li>
+<li>git reset [–hard|soft|mixed|merge|keep] [<commit>]<br> mode的取值可以是hard,soft,mixed,merged,keep.<br> hard:重置暂存区与工作目录到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交,此操作危险指数较大(慎用)<br> soft:暂存区与工作目录不会变化,仅仅删除<commit>之后的所有提交并将HEAD指向该提交<br> mixed:默认的,重置暂存区到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交<br> merge与keep …<br>…</li>
+</ol>
+<p>总结:git是工具,有好多用法,根据需要去使用,多看说明书.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bin1219.github.io/2020/07/12/use-github/" data-id="ckcj40utp0000j09k0qsc86vr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/22/hello-world/" class="article-date">
@@ -163,6 +256,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2020/07/25/vim/">vim快捷键</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/24/eclipse/">eclipse快捷键</a>
           </li>
         
@@ -176,10 +273,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2020/07/21/codeblocks/">codeblocks快捷键</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/15/sublime-text/">sublime快捷键</a>
           </li>
         
       </ul>

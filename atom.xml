@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bin1219.github.io/"/>
-  <updated>2020-07-24T13:29:33.025Z</updated>
+  <updated>2020-07-25T14:23:04.548Z</updated>
   <id>https://bin1219.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim快捷键</title>
+    <link href="https://bin1219.github.io/2020/07/25/vim/"/>
+    <id>https://bin1219.github.io/2020/07/25/vim/</id>
+    <published>2020-07-25T14:08:28.521Z</published>
+    <updated>2020-07-25T14:23:04.548Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>eclipse快捷键</title>
