@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bin1219.github.io/"/>
-  <updated>2020-07-25T14:23:04.548Z</updated>
+  <updated>2020-07-26T00:48:47.051Z</updated>
   <id>https://bin1219.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>visualstudio快捷键</title>
+    <link href="https://bin1219.github.io/2020/07/26/visualstudio/"/>
+    <id>https://bin1219.github.io/2020/07/26/visualstudio/</id>
+    <published>2020-07-26T00:47:02.167Z</published>
+    <updated>2020-07-26T00:48:47.051Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>vim快捷键</title>
