@@ -1,193 +1,268 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wode Hexo Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="been blog,"> 
+    <meta name="author" content="li Chengbin"> 
+    <link rel="alternative" href="atom.xml" title="Wode Hexo Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
 
-ga('create', 'UA-172513940-1', 'auto');
-ga('send', 'pageview');
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 
-</script>
-<!-- End Google Analytics -->
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
 
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
 
-  
-  <title>Wode Hexo Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="been blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wode Hexo Blog">
-<meta property="og:url" content="https://bin1219.github.io/index.html">
-<meta property="og:site_name" content="Wode Hexo Blog">
-<meta property="og:description" content="been blog">
-<meta property="article:author" content="li Chengbin">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Wode Hexo Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
 
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Wode Hexo Blog</a>
-      </h1>
-      
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <span id="config-title" style="display:none">Wode Hexo Blog</span>
+    <div id="loader"></div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/whoami/" title="ABOUT" external="false">ABOUT</a>
+        </li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://bin1219.github.io"></form>
-      </div>
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2021 li Chengbin.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
+
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
+            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
+            <span>Please input search keywords.</span>
+        </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-biji" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/14/biji/" class="article-date">
-  <time datetime="2020-10-14T11:14:25.052Z" itemprop="datePublished">2020-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/14/biji/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="xmr-wallet"><a href="#xmr-wallet" class="headerlink" title="xmr wallet"></a>xmr wallet</h3><blockquote>
-<p>44Q6KhZX1gYYHs2e7zptjkJkmZHJdQMkG8Vse2tVozzeebzYWW7YgkA3u6df8XqT7sEJ3m18AdsCZZgpbCTVQRuZH7nCora</p>
-</blockquote>
-<h3 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h3><blockquote>
-<p>2a02:0180:0006:0001:0000:0000:0000:2cb9</p>
-</blockquote>
-<h3 id="eth-wallet"><a href="#eth-wallet" class="headerlink" title="eth wallet"></a>eth wallet</h3><blockquote>
-<p>0x98231Fea15043d42d2Dc1a149cF16C77cd89aD1B</p>
-</blockquote>
-
-      
+</div>
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt="">
+            <a class="image-logo" href="/"></a>
+        </div>
+        <ul id="menu-menu" class="menu text-menu">
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/whoami/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/10/14/biji/" data-id="ckgbjqihy0000109k69urhyqi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-keil5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/27/keil5/" class="article-date">
-  <time datetime="2020-09-27T13:42:38.485Z" itemprop="datePublished">2020-09-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/27/keil5/">keil5快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="代码文本编辑"><a href="#代码文本编辑" class="headerlink" title="代码文本编辑"></a>代码文本编辑</h2><p>把选中的行注释：Ctrl/Command + <br>把选中的行取消注释：Ctrl/Command + /<br>把当前行的内容剪切：Ctrl/Command + L<br>跳转到指定行：Ctrl/Command + G</p>
-<p>复制选中内容：Ctrl/Command + C<br>粘贴选中内容：Ctrl/Command + V<br>剪切选中内容：Ctrl/Command + X<br>查找：Ctrl/Command + F<br>替换：Ctrl/Command + H<br>重做：Ctrl/Command + Y<br>撤销：Ctrl/Command + Z<br>全选：Ctrl/Command + A</p>
-<p>缩进：Tab<br>取消缩进：Shift + Tab</p>
-<p>移动光标选中： Shift + 方向键</p>
-<h2 id="文件编辑"><a href="#文件编辑" class="headerlink" title="文件编辑"></a>文件编辑</h2><p>创建新文件：Ctrl/Command + N<br>打开文件：Ctrl/Command + O<br>保存文件：Ctrl/Command + S</p>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>运行程序：F5<br>代码下载：F8<br>创建目标文件：F7</p>
-
-      
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
+                url(/img/cover.jpg);">
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/09/27/keil5/" data-id="ckfl5muss00005s9k3xtv6gaz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nano" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/12/nano/" class="article-date">
-  <time datetime="2020-08-12T01:02:21.723Z" itemprop="datePublished">2020-08-12</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            October 14, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2020/10/14/biji/" title="test" class="posttitle">test</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/12/nano/">nano快捷键</a>
-    </h1>
-  
-
-      </header>
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>Words count</i>
+                554
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                1 mins.
+            </span>
+            
+            
+        </p>
+        
+        
+        <div class="md-content animated fadeIn">
+            
+            <h3 id="xmr-wallet"><a href="#xmr-wallet" class="headerlink" title="xmr wallet"></a>xmr wallet</h3><blockquote>
+<p>44Q6KhZX1gYYHs2e7zptjkJkmZHJdQMkG8Vse2tVozzeebzYWW7YgkA3u6df8XqT7sEJ3m18AdsCZZgpbCTVQRuZH7nCora...</p></blockquote>
+            
+            <span class="read-more"><a href="/2020/10/14/biji/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、复制、剪切和粘贴文本"><a href="#一、复制、剪切和粘贴文本" class="headerlink" title="一、复制、剪切和粘贴文本"></a>一、复制、剪切和粘贴文本</h2><p>1、行复制、剪切和粘贴</p>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="typed-text"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            September 27, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/09/27/keil5/" title="keil5快捷键" class="posttitle">keil5快捷键</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        723
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>把选中的行注释：Ctrl/Command + <br>把选中的行取消注释：Ctrl/Command + /<br>把当前行的内容剪切：Ctrl/Command + L<br>跳转到指定行：Ctrl/Command + G</p>
+<p>复制选中内容：Ctrl/Command + C<br>粘贴选中内容：Ctrl/Command + V<br>剪切选中内容：Ctrl/Command + X<br>查找：Ctrl/Command + F<br>替换：Ctrl/Command + H<br>重做：Ctrl/Command + Y<br>撤销：Ctrl/Command + Z<br>全选：Ctrl...</p>
+            
+            <span class="read-more"><a href="/2020/09/27/keil5/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            August 12, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/08/12/nano/" title="nano快捷键" class="posttitle">nano快捷键</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        620
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>1、行复制、剪切和粘贴</p>
 <p>Alt+6：复制光标所在行。<br>Ctrl+K：剪切光标所在行。<br>Ctrl+U：粘贴。<br>2、自由复制、剪切和粘贴</p>
 <p>自由复制：<br>Ctrl+6：设置复制文本的起始位置。</p>
 <p>Alt+6：设置复制文本的结束位置。</p>
@@ -195,48 +270,49 @@ ga('send', 'pageview');
 <p>自由剪切：<br>Alt+A：设置剪切文本的起始位置。</p>
 <p>Ctrl+K：设置剪切文本的结束位置。</p>
 <p>首先按Alt+A组合键，然后使用方向键选择剪切区域，选好后按Ctrl+K实现对该区域的剪切。</p>
-<p>Ctrl+U：粘贴。<br>二、查找和替换<br>1、查找文本</p>
-<p>首先按下Ctrl+W，然后输入要查找的文本，最后按Enter键。</p>
-<p>查找下一个：Ctrl+W, Enter</p>
-<p>2、查找并替换文本</p>
-<p>首先按下Ctrl+\，输入要查找的文本，然后按Enter键，再输入替换后的文本，按Enter。此时按照提示操作即可。</p>
-
-      
+<p>Ctrl...</p>
+            
+            <span class="read-more"><a href="/2020/08/12/nano/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/08/12/nano/" data-id="ckdqsyx320000wk9kc24g7va1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-devcpp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/02/devcpp/" class="article-date">
-  <time datetime="2020-08-02T12:14:15.548Z" itemprop="datePublished">2020-08-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            August 02, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/08/02/devcpp/" title="dev-cpp快捷键" class="posttitle">dev-cpp快捷键</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/02/devcpp/">dev-cpp快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        499
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
 <li><p>恢复 Ctrl+Z </p>
 </li>
 <li><p>重做 Ctrl+Y </p>
@@ -271,170 +347,152 @@ ga('send', 'pageview');
 </li>
 </ul>
 
-      
+            
+            <span class="read-more"><a href="/2020/08/02/devcpp/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/08/02/devcpp/" data-id="ckdd1thw000008g9k1hb1foae" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-typora" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/27/typora/" class="article-date">
-  <time datetime="2020-07-27T00:06:10.411Z" itemprop="datePublished">2020-07-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/27/typora/">typora快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Source-Mode"><a href="#Source-Mode" class="headerlink" title="Source Mode"></a>Source Mode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+&#x2F; 切换源码模式</span><br></pre></td></tr></table></figure>
-
-<h2 id="Code-Block"><a href="#Code-Block" class="headerlink" title="Code Block"></a>Code Block</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;code&#96; ctrl+shit+&#96;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Line-Break"><a href="#Line-Break" class="headerlink" title="Line Break"></a>Line Break</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift+enter or &lt;br&#x2F;&gt; 换行</span><br></pre></td></tr></table></figure>
-
-<h2 id="Emoji"><a href="#Emoji" class="headerlink" title="Emoji"></a>Emoji</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:smile: 表情</span><br></pre></td></tr></table></figure>
-
-<h2 id="Highlight"><a href="#Highlight" class="headerlink" title="Highlight"></a>Highlight</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;高亮显示&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
-
-<h2 id="选中当前行"><a href="#选中当前行" class="headerlink" title="选中当前行"></a>选中当前行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+L</span><br></pre></td></tr></table></figure>
-      
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/27/typora/" data-id="ckd3rezth0000es9k83hs646d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-visualstudio" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/26/visualstudio/" class="article-date">
-  <time datetime="2020-07-26T00:47:02.167Z" itemprop="datePublished">2020-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 27, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/27/typora/" title="typora快捷键" class="posttitle">typora快捷键</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/visualstudio/">visualstudio快捷键</a>
-    </h1>
-  
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        1.9k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+&#x2F; 切换源码模式</span><br></pre></td></tr></table></figure>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="项目相关的快捷键"><a href="#项目相关的快捷键" class="headerlink" title="项目相关的快捷键"></a>项目相关的快捷键</h2><ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;code&#96; ctrl+shit+&#96;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift+enter or &lt;br&#x2F;&gt; 换行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:smile: 表情</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x3D;&#x3D;高亮显示&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+L</span><br></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2020/07/27/typora/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 26, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/26/visualstudio/" title="visualstudio快捷键" class="posttitle">visualstudio快捷键</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        1.8k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        2 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
 <li>Ctrl + Shift + B = 生成项目</li>
 <li>Ctrl + Alt + L = 显示Solution Explorer（解决方案资源管理器）</li>
 <li>Shift + Alt+ C = 添加新类</li>
 <li>Shift + Alt + A = 添加新项目到项目</li>
 </ul>
-<h2 id="编辑相关的键盘快捷键"><a href="#编辑相关的键盘快捷键" class="headerlink" title="编辑相关的键盘快捷键"></a>编辑相关的键盘快捷键</h2><ul>
+<ul>
 <li>Ctrl + Enter = 在当前行插入空行</li>
 <li>Ctrl + Shift + Enter = 在当前行下方插入空行</li>
 <li>Ctrl +空格键 = 使用IntelliSense（智能感知）自动完成</li>
-<li>Alt + Shift +箭头键(←,↑,↓,→) = 选择代码的自定义部分</li>
-<li>Ctrl + } = 匹配大括号、括号</li>
-<li>Ctrl + Shift +} = 在匹配的括号、括号内选择文本</li>
-<li>Ctrl + Shift + S = 保存所有文件和项目</li>
-<li>Ctrl + K，Ctrl + C = 注释选定行</li>
-<li>Ctrl + K，Ctrl + U = 取消选定行的注释</li>
-<li>Ctrl + K，Ctrl + D = 正确对齐所有代码</li>
-<li>Shift + End = 从头到尾选择整行</li>
-<li>Shift + Home = 从尾到头选择整行</li>
-<li>Ctrl + Delete = 删除光标右侧的所有字</li>
-</ul>
-<h2 id="导航相关的键盘快捷键"><a href="#导航相关的键盘快捷键" class="headerlink" title="导航相关的键盘快捷键"></a>导航相关的键盘快捷键</h2><ul>
-<li>Ctrl +Up/Down = 滚动窗口但不移动光标</li>
-<li>Ctrl + - = 让光标移动到它先前的位置</li>
-<li>Ctrl ++ = 让光标移动到下一个位置</li>
-<li>F12 = 转到定义</li>
-</ul>
-<h2 id="调试相关的键盘快捷键"><a href="#调试相关的键盘快捷键" class="headerlink" title="调试相关的键盘快捷键"></a>调试相关的键盘快捷键</h2><ul>
-<li>Ctrl + Alt + P = 附加到进程</li>
-<li>F10 = 调试单步执行</li>
-<li>F5 = 开始调试</li>
-<li>Shift + F5 = 停止调试</li>
-<li>Ctrl + Alt + Q = 添加快捷匹配</li>
-<li>F9 = 设置或删除断点</li>
-</ul>
-<h2 id="搜索相关的键盘快捷键"><a href="#搜索相关的键盘快捷键" class="headerlink" title="搜索相关的键盘快捷键"></a>搜索相关的键盘快捷键</h2><ul>
-<li>Ctrl + K  Ctrl + K = 将当前行添加书签</li>
-<li>Ctrl + K  Ctrl + N = 导航至下一个书签</li>
-<li>Ctrl + . = 如果你键入一个类名如Collection<string>，且命名空间导入不正确的话，那么这个快捷方式组合将自动插入导入</li>
-<li>Ctrl + Shift + F = 在文件中查找</li>
-<li>Shift  + F12 = 查找所有引用</li>
-<li>Ctrl + F = 显示查找对话框</li>
-<li>Ctrl + H = 显示替换对话框</li>
-<li>Ctrl + G = 跳转到行号或行</li>
-<li>Ctrl + Shift + F = 查找所选条目在整个解决方案中的引用</li>
-</ul>
-
-      
+<li>Alt + Shift +箭头键(←,↑,↓,→) = 选择代...</li></ul>
+            
+            <span class="read-more"><a href="/2020/07/26/visualstudio/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/26/visualstudio/" data-id="ckd2d7gz10000f89khxhe8xkm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-vim" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/25/vim/" class="article-date">
-  <time datetime="2020-07-25T14:08:28.521Z" itemprop="datePublished">2020-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 25, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/25/vim/" title="vim快捷键" class="posttitle">vim快捷键</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/25/vim/">vim快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、移动光标"><a href="#一、移动光标" class="headerlink" title="一、移动光标"></a>一、移动光标</h2><ul>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        5 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
 <li>h,j,k,l 上，下，左，右</li>
 <li>ctrl-e 移动页面</li>
 <li>ctrl-f 上翻一页</li>
@@ -453,258 +511,49 @@ ga('send', 'pageview');
 <li>gg 跳至文首</li>
 <li>G 调至文尾</li>
 <li>5gg/5G 调至第5行</li>
-<li>gd 跳至当前光标所在的变量的声明处</li>
-<li>fx 在当前行中找x字符，找到了就跳转至</li>
-<li>; 重复上一个f命令，而不用重复的输入fx</li>
-<li>* 查找光标所在处的单词，向下查找</li>
-<li># 查找光标所在处的单词，向上查找</li>
-</ul>
-<h2 id="二、删除复制"><a href="#二、删除复制" class="headerlink" title="二、删除复制"></a>二、删除复制</h2><ul>
-<li>dd 删除光标所在行</li>
-<li>dw 删除一个字(word)</li>
-<li>d删除到行末删除当前字符删除前一个字符复制一行复制一个字/Y 复制到行末</li>
-<li>p 粘贴粘贴板的内容到当前行的下面</li>
-<li>P 粘贴粘贴板的内容到当前行的上面</li>
-</ul>
-<h2 id="三、插入模式"><a href="#三、插入模式" class="headerlink" title="三、插入模式"></a>三、插入模式</h2><ul>
-<li>i 从当前光标处进入插入模式</li>
-<li>I 进入插入模式，并置光标于行首</li>
-<li>a 追加模式，置光标于当前光标之后</li>
-<li>A 追加模式，置光标于行末</li>
-<li>o 在当前行之下新加一行，并进入插入模式</li>
-<li>O 在当前行之上新加一行，并进入插入模式</li>
-<li>Esc 退出插入模式</li>
-</ul>
-<h2 id="四、编辑"><a href="#四、编辑" class="headerlink" title="四、编辑"></a>四、编辑</h2><ul>
-<li>J 将下一行和当前行连接为一行</li>
-<li>cc 删除当前行并进入编辑模式</li>
-<li>cw 删除当前字，并进入编辑模式</li>
-<li>c$ 擦除从当前位置至行末的内容，并进入编辑模式</li>
-<li>s 删除当前字符并进入编辑模式</li>
-<li>S 删除光标所在行并进入编辑模式</li>
-<li>xp 交换当前字符和下一个字符</li>
-<li>u 撤销</li>
-<li>ctrl+r 重做</li>
-<li>~ 切换大小写，当前字符</li>
-<li>&gt;&gt; 将当前行右移一个单位</li>
-<li>&lt;&lt; 将当前行左移一个单位(一个tab符)</li>
-<li>== 自动缩进当前行</li>
-</ul>
-<h2 id="五、查找替换"><a href="#五、查找替换" class="headerlink" title="五、查找替换"></a>五、查找替换</h2><ul>
-<li>/pattern 向后搜索字符串pattern</li>
-<li>?pattern 向前搜索字符串pattern</li>
-<li>“\c” 忽略大小写</li>
-<li>“\C” 大小写敏感</li>
-<li></li>
-<li>n 下一个匹配(如果是/搜索，则是向下的下一个，?搜索则是向上的下一个)</li>
-<li>N 上一个匹配(同上)</li>
-<li>:%s/old/new/g 搜索整个文件，将所有的old替换为new</li>
-<li>:%s/old/new/gc 搜索整个文件，将所有的old替换为new，每次都要你确认是否替换</li>
-</ul>
-<h2 id="六、退出编辑器"><a href="#六、退出编辑器" class="headerlink" title="六、退出编辑器"></a>六、退出编辑器</h2><ul>
-<li>:w 将缓冲区写入文件，即保存修改</li>
-<li>:wq 保存修改并退出</li>
-<li>:x 保存修改并退出</li>
-<li>:q 退出，如果对缓冲区进行过修改，则会提示</li>
-<li>:q! 强制退出，放弃修改</li>
-</ul>
-<h2 id="七、多文件编辑"><a href="#七、多文件编辑" class="headerlink" title="七、多文件编辑"></a>七、多文件编辑</h2><ul>
-<li>vim file1.. 同时打开多个文件</li>
-<li>:args 显示当前编辑文件</li>
-<li>:next 切换到下个文件</li>
-<li>:prev 切换到前个文件</li>
-<li>:next！ 不保存当前编辑文件并切换到下个文件</li>
-<li>:prev！ 不保存当前编辑文件并切换到上个文件</li>
-<li>:wnext 保存当前编辑文件并切换到下个文件</li>
-<li>:wprev 保存当前编辑文件并切换到上个文件</li>
-<li>:first 定位首文件</li>
-<li>:last 定位尾文件</li>
-<li>ctrl+^ 快速在最近打开的两个文件间切换</li>
-<li>:split[sp] 把当前文件水平分割</li>
-<li>:split file 把当前窗口水平分割, file</li>
-<li>:vsplit[vsp] file 把当前窗口垂直分割, file</li>
-<li>:new file 同split file</li>
-<li>:close 关闭当前窗口</li>
-<li>:only 只显示当前窗口, 关闭所有其他的窗口</li>
-<li>:all 打开所有的窗口</li>
-<li>:vertical all 打开所有的窗口, 垂直打开</li>
-<li>:qall 对所有窗口执行：q操作</li>
-<li>:qall! 对所有窗口执行：q!操作</li>
-<li>:wall 对所有窗口执行：w操作</li>
-<li>:wqall 对所有窗口执行：wq操作</li>
-<li>ctrl-w h 跳转到左边的窗口</li>
-<li>ctrl-w j 跳转到下面的窗口</li>
-<li>ctrl-w k 跳转到上面的窗口</li>
-<li>ctrl-w l 跳转到右边的窗口</li>
-<li>ctrl-w t 跳转到最顶上的窗口</li>
-<li>ctrl-w b 跳转到最底下的窗口</li>
-</ul>
-<h2 id="八、多标签编辑"><a href="#八、多标签编辑" class="headerlink" title="八、多标签编辑"></a>八、多标签编辑</h2><ul>
-<li>:tabedit file 在新标签中打开文件file</li>
-<li>:tab split file 在新标签中打开文件file</li>
-<li>:tabp 切换到前一个标签</li>
-<li>:tabn 切换到后一个标签</li>
-<li>:tabc 关闭当前标签</li>
-<li>:tabo 关闭其他标签</li>
-<li>gt 到下一个tab</li>
-<li>gT 到上一个tab</li>
-<li>0gt 跳到第一个tab</li>
-<li>5gt 跳到第五个tab</li>
-</ul>
-<h2 id="九、执行shell命令"><a href="#九、执行shell命令" class="headerlink" title="九、执行shell命令"></a>九、执行shell命令</h2><ul>
-<li>1、在命令模式下输入”:sh”，可以运行相当于在字符模式下，到输入结束想回到VIM编辑器中用exit，ctrl+D返回VIM编辑器</li>
-<li>2、可以”!command”，运行结束后自动回到VIM编辑器中</li>
-<li>3、用“Ctrl+Z“回到shell，用fg返回编辑</li>
-<li>4、:!make -&gt; 直接在当前目录下运行make指令</li>
-</ul>
-<h2 id="十、如何在vim中编译程序"><a href="#十、如何在vim中编译程序" class="headerlink" title="十、如何在vim中编译程序"></a>十、如何在vim中编译程序</h2><ul>
-<li>在vim中可以完成make,而且可以将编译的结果也显示在vim里，先执行 :copen 命令，将结果输出的窗口打开，然后执行 :make<br>编译后的结果就显示在了copen打开的小窗口里了，而且用鼠标双击错误信息，就会跳转到发生错误的行。</li>
-</ul>
-<h2 id="十一、buffer操作"><a href="#十一、buffer操作" class="headerlink" title="十一、buffer操作"></a>十一、buffer操作</h2><p>1、buffer状态</p>
-<ul>
-<li>- （非活动的缓冲区）</li>
-<li>a （当前被激活缓冲区）</li>
-<li>h （隐藏的缓冲区）</li>
-<li>% （当前的缓冲区）</li>
-<li># （交换缓冲区）</li>
-<li>= （只读缓冲区）</li>
-<li>+ （已经更改的缓冲区）</li>
-</ul>
-<h2 id="十二、-VIM-操作目录"><a href="#十二、-VIM-操作目录" class="headerlink" title="十二、 VIM 操作目录"></a>十二、 VIM 操作目录</h2><ul>
-<li><p>1.打开目录</p>
-</li>
-<li><p>vim .</p>
-</li>
-<li><p>vim a-path/</p>
-</li>
-<li><p>2.以下操作在操作目录时生效</p>
-</li>
-<li><p>p,P,t,u,U,x,v,o,r,s</p>
-</li>
-<li></li>
-<li><p>c 使当前打开的目录成为当前目录</p>
-</li>
-<li><p>d 创建目录</p>
-</li>
-<li><p>% 创建文件</p>
-</li>
-<li><p>D 删除文件/目录</p>
-</li>
-<li><p>- 转到上层目录</p>
-</li>
-<li><p>gb 转到上一个 bookmarked directory</p>
-</li>
-<li><p>i 改变目录文件列表方式</p>
-</li>
-<li><p>^l 刷新当前打开的目录</p>
-</li>
-<li></li>
-<li><p>mf - 标记文件</p>
-</li>
-<li><p>mu - unmark all marked files</p>
-</li>
-<li><p>mz - Compress/decompress marked files</p>
-</li>
-<li><p>gh 显示/不显示隐藏文件( dot-files)</p>
-</li>
-<li><p>^h 编辑隐藏文件列表</p>
-</li>
-<li><p>a 转换显示模式, all - hide - unhide</p>
-</li>
-<li><p>qf diplay infomation about file</p>
-</li>
-<li><p>qb list the bookmarked directories and directory traversal history</p>
-</li>
-<li><p>gi Display information on file</p>
-</li>
-<li></li>
-<li><p>mb</p>
-</li>
-<li><p>mc</p>
-</li>
-<li><p>md - 将标记的文件(mf标记文件)使用 diff 模式</p>
-</li>
-<li><p>me - 编辑标记的文件,只显示一个，其余放入 buffer 中</p>
-</li>
-<li><p>mh</p>
-</li>
-<li><p>mm - move marked files to marked-file target directory</p>
-</li>
-<li><p>mc - copy</p>
-</li>
-<li><p>mp</p>
-</li>
-<li><p>mr</p>
-</li>
-<li><p>mt</p>
-</li>
-<li></li>
-<li><p>vim 中复制,移动文件</p>
-</li>
-<li><p>1, mt - 移动到的目录</p>
-</li>
-<li><p>2, mf - 标记要移动的文件</p>
-</li>
-<li><p>3, mc - 移动/复制</p>
-</li>
-<li></li>
-<li><p>R 移动文件</p>
-</li>
-<li></li>
-<li><p>打开当前编辑文件的目录</p>
-</li>
-<li><p>:Explore</p>
-</li>
-<li><p>:Hexplore</p>
-</li>
-<li><p>:Nexplore</p>
-</li>
-<li><p>:Pexplore</p>
-</li>
-<li><p>:Sexplore</p>
-</li>
-<li><p>:Texplore</p>
-</li>
-<li><p>:Vexplore</p>
-</li>
-</ul>
-
-      
+<li>gd 跳至...</li></ul>
+            
+            <span class="read-more"><a href="/2020/07/25/vim/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/25/vim/" data-id="ckd1qv6fn0000nw9kg3a1g413" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-eclipse" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/24/eclipse/" class="article-date">
-  <time datetime="2020-07-24T13:26:20.410Z" itemprop="datePublished">2020-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 24, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/24/eclipse/" title="eclipse快捷键" class="posttitle">eclipse快捷键</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/24/eclipse/">eclipse快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Eclipse-常用快捷键"><a href="#Eclipse-常用快捷键" class="headerlink" title="Eclipse 常用快捷键"></a>Eclipse 常用快捷键</h1><h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><ul>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        3.5k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
 <li>Ctrl+1    快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）</li>
 <li>Ctrl+Shift+F    格式化当前代码</li>
 <li>Ctrl+Shift+M    添加类的import导入</li>
@@ -712,113 +561,49 @@ ga('send', 'pageview');
 <li>Ctrl+Y    重做（与撤销Ctrl+Z相反）</li>
 <li>Alt+/    内容辅助（帮你省了多少次键盘敲打，太常用了）</li>
 <li>Ctrl+D    删除当前行或者多行</li>
-<li>Alt+↓    当前行和下面一行交互位置（特别实用,可以省去先剪切,再粘贴了）</li>
-<li>Alt+↑    当前行和上面一行交互位置（同上）</li>
-<li>Ctrl+Alt+↓    复制当前行到下一行（复制增加）</li>
-<li>Ctrl+Alt+↑    复制当前行到上一行（复制增加）</li>
-<li>Shift+Enter    在当前行的下一行插入空行（这时鼠标可以在当前行的任一位置,不一定是最后）</li>
-<li>Ctrl+/    注释当前行,再按则取消注释</li>
-</ul>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><ul>
-<li>Alt+Shift+↑    选择封装元素</li>
-<li>Alt+Shift+←    选择上一个元素</li>
-<li>Alt+Shift+→    选择下一个元素</li>
-<li>Shift+←    从光标处开始往左选择字符</li>
-<li>Shift+→    从光标处开始往右选择字符</li>
-<li>Ctrl+Shift+←    选中光标左边的单词</li>
-<li>Ctrl+Shift+→    选中光标右边的单词</li>
-</ul>
-<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><ul>
-<li>Ctrl+←    光标移到左边单词的开头，相当于vim的b</li>
-<li>Ctrl+→    光标移到右边单词的末尾，相当于vim的e</li>
-</ul>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
-<li>Ctrl+K    参照选中的Word快速定位到下一个（如果没有选中word，则搜索上一次使用搜索的word）</li>
-<li>Ctrl+Shift+K    参照选中的Word快速定位到上一个</li>
-<li>Ctrl+J    正向增量查找（按下Ctrl+J后,你所输入的每个字母编辑器都提供快速匹配定位到某个单词,如果没有,则在状态栏中显示没有找到了,查一个单词时,特别实用,要退出这个模式，按escape建）</li>
-<li>Ctrl+Shift+J    反向增量查找（和上条相同,只不过是从后往前查）</li>
-<li>Ctrl+Shift+U    列出所有包含字符串的行</li>
-<li>Ctrl+H    打开搜索对话框</li>
-<li>Ctrl+G    工作区中的声明</li>
-<li>Ctrl+Shift+G    工作区中的引用</li>
-</ul>
-<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><ul>
-<li>Ctrl+Shift+T    搜索类（包括工程和关联的第三jar包）</li>
-<li>Ctrl+Shift+R    搜索工程中的文件</li>
-<li>Ctrl+E    快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）</li>
-<li>F4    打开类型层次结构</li>
-<li>F3    跳转到声明处</li>
-<li>Alt+←    前一个编辑的页面</li>
-<li>Alt+→    下一个编辑的页面（当然是针对上面那条来说了）</li>
-<li>Ctrl+PageUp/PageDown    在编辑器中，切换已经打开的文件</li>
-</ul>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><ul>
-<li>F5    单步跳入</li>
-<li>F6    单步跳过</li>
-<li>F7    单步返回</li>
-<li>F8    继续</li>
-<li>Ctrl+Shift+D    显示变量的值</li>
-<li>Ctrl+Shift+B    在当前行设置或者去掉断点</li>
-<li>Ctrl+R    运行至行(超好用，可以节省好多的断点)</li>
-</ul>
-<h2 id="重构（一般重构的快捷键都是Alt-Shift开头的了）"><a href="#重构（一般重构的快捷键都是Alt-Shift开头的了）" class="headerlink" title="重构（一般重构的快捷键都是Alt+Shift开头的了）"></a>重构（一般重构的快捷键都是Alt+Shift开头的了）</h2><ul>
-<li>Alt+Shift+R    重命名方法名、属性或者变量名 （是我自己最爱用的一个了,尤其是变量和类的Rename,比手工方法能节省很多劳动力）</li>
-<li>Alt+Shift+M    把一段函数内的代码抽取成方法 （这是重构里面最常用的方法之一了,尤其是对一大堆泥团代码有用）</li>
-<li>Alt+Shift+C    修改函数结构（比较实用,有N个函数调用了这个方法,修改一次搞定）</li>
-<li>Alt+Shift+L    抽取本地变量（ 可以直接把一些魔法数字和字符串抽取成一个变量,尤其是多处调用的时候）</li>
-<li>Alt+Shift+F    把Class中的local变量变为field变量 （比较实用的功能）</li>
-<li>Alt+Shift+I    合并变量（可能这样说有点不妥Inline）</li>
-<li>Alt+Shift+V    移动函数和变量（不怎么常用）</li>
-<li>Alt+Shift+Z    重构的后悔药（Undo）</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li>Alt+Enter    显示当前选择资源的属性，windows下的查看文件的属性就是这个快捷键，通常用来查看文件在windows中的实际路径</li>
-<li>Ctrl+↑    文本编辑器 上滚行</li>
-<li>Ctrl+↓    文本编辑器 下滚行</li>
-<li>Ctrl+M    最大化当前的Edit或View （再按则反之）</li>
-<li>Ctrl+O    快速显示 OutLine（不开Outline窗口的同学，这个快捷键是必不可少的）</li>
-<li>Ctrl+T    快速显示当前类的继承结构</li>
-<li>Ctrl+W    关闭当前Editer（windows下关闭打开的对话框也是这个，还有qq、旺旺、浏览器等都是）</li>
-<li>Ctrl+L    文本编辑器 转至行</li>
-<li>F2    显示工具提示描述</li>
-</ul>
-
-      
+<li>Alt+↓    当前行和下...</li></ul>
+            
+            <span class="read-more"><a href="/2020/07/24/eclipse/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/24/eclipse/" data-id="ckd09i4wp0000wo9k3nf4e4d4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-potplayer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/23/potplayer/" class="article-date">
-  <time datetime="2020-07-23T13:19:32.439Z" itemprop="datePublished">2020-07-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 23, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/23/potplayer/" title="potplayer快捷键" class="posttitle">potplayer快捷键</a></h3>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/potplayer/">potplayer快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        450
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
 <li>空格：播放/暂停</li>
 <li>Enter/Alt+Enter：全屏<br> c–加速     x–减速    z–恢复原速度，再次则恢复上次速度（类似以前电视机的【回看】功能）</li>
 <li>Tab：显示当前播放视频信息</li>
@@ -833,165 +618,280 @@ ga('send', 'pageview');
 <li>Ctrl+Z：图像左右翻转开关</li>
 <li>Alt+K：图像旋转，每一次顺时针旋转90°</li>
 <li>Ctrl+C：截图当前屏幕，并复制到剪切板</li>
-<li>Ctrl+E：截图，并保存到安装目录下Capture</li>
-<li>Ctrl+S:屏幕捕捉</li>
-</ul>
-
-      
+<li>Ctrl...</li></ul>
+            
+            <span class="read-more"><a href="/2020/07/23/potplayer/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/23/potplayer/" data-id="ckcytremq0000089k2h2vbrg9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-    <article id="post-qtcreator" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/22/qtcreator/" class="article-date">
-  <time datetime="2020-07-22T13:06:07.577Z" itemprop="datePublished">2020-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/qtcreator/">qt creator快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一般快捷键"><a href="#一般快捷键" class="headerlink" title="一般快捷键"></a>一般快捷键</h2><p>打开文件或项目(O)      Ctrl+O<br>新建文件或项目(N)    Ctrl+N<br>在外部编辑器中打开  Alt+V, Alt+I<br>全选(A)    Ctrl+A<br>删除    Del<br>剪切(T)  Ctrl+X<br>复制(C)    Ctrl+C<br>粘贴     Ctrl+V<br>撤销     Ctrl+Y<br>打印     Ctrl+P<br>保存     Ctrl+S<br>保存所有文件(L)…    CTRL+Shift+S<br>关闭窗口    Ctrl+W<br>关闭所有文件    Ctrl+Shift+W<br>关闭当前文件    Ctrl+F4<br>后退    Alt+Left<br>前进    Alt+Right<br>跳转行(G)…    Ctrl+L<br>历史中下个打开的文件    Ctrl+Shift+Tab<br>切换到其他分栏    Ctrl+E, O<br>历史中先前打开的文件    Ctrl+Tab<br>激活定位器    Ctrl+K<br>切换到欢迎模式    Ctrl+1<br>切换到编辑模式    Ctrl+2<br>切换到设计模式    Ctrl+3<br>切换到调试模式    Ctrl+4<br>切换到项目模式    Ctrl+5<br>切换到分析模式    Ctrl+6<br>切换到帮助模式    Ctrl+7<br>切换问题窗口    Alt+1 (Cmd+1 on OS X)<br>切换搜索结果窗口    Alt+2 (Cmd+2 on OS X)<br>切换应用程序输出窗口    Alt+3 (Cmd+3 on OS X)<br>切换编译输出窗口    Alt+4 (Cmd+4 on OS X)<br>切换其它输出窗口    Alt+编号 (Cmd+编号 on OS X) 编号为”输出窗口”中的编号<br>激活书签窗口    Alt+M<br>激活文件系统窗口    Alt+Y<br>激活打开文档窗口    Alt+O<br>最大化输出窗口    Alt+9<br>输出窗口-下一项    F6<br>输出窗口-上一项    Shift+F6<br>激活项目窗口    Alt+X<br>全屏    Ctrl+Shift+F11<br>切换侧边栏    Alt+0 (Cmd+0 on OS X)<br>撤销    Ctrl+Z<br>移动到编辑模式。在编辑模式下：第一次按下将焦点移动到编辑器中，第二次按下关闭辅助窗口    Esc<br>退出Qt Creator    Ctrl+Q  </p>
-<h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><p>自动缩进    Ctrl+I<br>折叠    Ctrl+&lt;<br>展开    Ctrl+&gt;<br>在此范围内触发完成    Ctrl+Space<br>复制行    Ctrl+Ins<br>复制到行下    Ctrl+Alt+Down<br>复制到行上    Ctrl+Alt+Up<br>查看剪切板历史    Ctrl+Shift+V<br>剪切行    Shift+Del<br>追加行    Ctrl+J<br>在当前行上方插入新行    Ctrl+Shift+Enter<br>在当前行下方插入新行    Ctrl+Enter<br>减小字体大小    Ctrl+- (Ctrl+鼠标滚轮向下)<br>增加字体大小    Ctrl++ (Ctrl+鼠标滚轮向上)<br>重置字体大小    Ctrl+0<br>切换Vim的编辑风格    Alt+V, Alt+V<br>分栏    Ctrl+E, 2<br>左右分栏    Ctrl+E, 3<br>删除所有分割    Ctrl+E, 1<br>删除当前分割    Ctrl+E, 0<br>全选    Ctrl+A<br>跳转至块结尾    Ctrl+]<br>跳转至块开始    Ctrl+[<br>跳转至以}结尾的块    Ctrl+}<br>跳转至以{开始的块    Ctrl+{<br>向下移动当前行    Ctrl+Shift+Down<br>向上移动当前行    Ctrl+Shift+Up<br>在此范围激活重构    Alt+Enter<br>重新包装段    Ctrl+E, R<br>选择当前块，第二次按下选择父块    Ctrl+U<br>启用文本换行    Ctrl+E, Ctrl+W<br>注释选中的内容    Ctrl+/<br>可视化的空白    Ctrl+E, Ctrl+V<br>调整大小    Ctrl+J<br>网格布局    Ctrl+G<br>水平布局    Ctrl+H<br>垂直布局    Ctrl+L<br>预览    Alt+Shift+R<br>编辑信号和槽    F4<br>切换书签    CTRL+M<br>下个书签    Ctrl+.<br>上个书签    Ctrl+,<br>取得代码片段    Alt+C, Alt+F<br>粘贴代码片段    Alt+C, Alt+P<br>查找所有引用    Ctrl+Shift+U<br>跟随鼠标下的符号    F2<br>重命名光标所在符号    Ctrl+Shift+R<br>切换函数声明/定义    Shift+F2<br>打开类型层次窗口    Ctrl+Shift+T<br>切换头文件/源文件    F4<br>选中的文本变小写    Alt+U<br>选中的文本变大写    Alt+Shift+U<br>在JavaScript中执行静态检查来查找共同问题    Ctrl+Shift+C<br>查找和替换    Ctrl+F<br>向下查找    F3<br>向上查找    Shift+F3<br>查找选中文本下一次出现    Ctrl+F3<br>查找选中文本上一次出现    Ctrl+Shift+F3<br>替换和查找下一个    Ctrl+=<br>打开高级搜索    Ctrl+Shift+F<br>录制宏    Alt+(<br>停止录制宏    Alt+)<br>播放最近的宏    Alt+R<br>显示Qt Quick工具栏    Ctrl+Alt+Space<br>在FakeVim模式执行用户行为    Alt+V, n, 其中n是用户动作的数量, 从1到9  </p>
-<h2 id="图像浏览器快捷键"><a href="#图像浏览器快捷键" class="headerlink" title="图像浏览器快捷键"></a>图像浏览器快捷键</h2><p>切换背景    Ctrl+[<br>显示轮廓线    Ctrl+]<br>放大    Ctrl++<br>缩小    Ctrl+-<br>适应屏幕    Ctrl+=<br>原始大小    Ctrl+0  </p>
-<h2 id="Qt-Quick设计师快捷键"><a href="#Qt-Quick设计师快捷键" class="headerlink" title="Qt Quick设计师快捷键"></a>Qt Quick设计师快捷键</h2><p>打开定义所选组件的QML文件    F2<br>切换代码编辑器/可视化编辑器    F4<br>切换左侧侧边栏    Ctrl+Alt+0<br>切换右侧侧边栏    Ctrl+Alt+Shift+0  </p>
-<h2 id="调试快捷键"><a href="#调试快捷键" class="headerlink" title="调试快捷键"></a>调试快捷键</h2><p>开始/继续调试    F5<br>停止调试    Shift+F5<br>单步跳过    F10<br>单步进入    F11<br>单步跳出    Shift+F11<br>切换断点    F9<br>运行到选择的函数    Ctrl+F6<br>执行到行    Ctrl+F10<br>相反方向    F12(暂无)  </p>
-<h2 id="项目快捷键"><a href="#项目快捷键" class="headerlink" title="项目快捷键"></a>项目快捷键</h2><p>构建项目    Ctrl+B<br>构建所有项目    Ctrl+Shift+B<br>新建项目…    Ctrl+Shift+N<br>载入项目…    Ctrl+Shift+O<br>选择构建套件(Kit)构建和运行项目    Ctrl+T<br>运行    Ctrl+R  </p>
-<h2 id="帮助快捷键"><a href="#帮助快捷键" class="headerlink" title="帮助快捷键"></a>帮助快捷键</h2><p>上下文相关帮助    F1<br>在帮助模式下激活内容    Ctrl+T(暂无)<br>添加书签    Ctrl+M<br>在帮助模式下激活索引    Ctrl+I(暂无)<br>重置字体大小    Ctrl+0(暂无)<br>在帮助模式下激活查找    Ctrl+S(暂wu)  </p>
-
-      
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
     </div>
-    <footer class="article-footer">
-      <a data-url="https://bin1219.github.io/2020/07/22/qtcreator/" data-id="ckcxeqfga0000m09k7a4r2bpf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-  </nav>
-
-</section>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            July 22, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/07/22/qtcreator/" title="qt creator快捷键" class="posttitle">qt creator快捷键</a></h3>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        4k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        4 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>打开文件或项目(O)      Ctrl+O<br>新建文件或项目(N)    Ctrl+N<br>在外部编辑器中打开  Alt+V, Alt+I<br>全选(A)    Ctrl+A<br>删除    Del<br>剪切(T)  Ctrl+X<br>复制(C)    Ctrl+C<br>粘贴     Ctrl+V<br>撤销     Ctrl+Y<br>打印     Ctrl+P<br>保存     Ctrl+S<br>保存所有文件(L)…    CTRL+Shift+S<br>关闭窗口    Ctrl+W<br>关闭所有文件    Ctrl+Shift+W<br>关闭当前文件    Ctrl+F4<br>后退    Alt+Left<br>前进    Alt+Right<br>跳转行(G)…    Ctrl+L<br>历史中下个打开的文件    Ctrl...</p>
+            
+            <span class="read-more"><a href="/2020/07/22/qtcreator/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
     </div>
-  </div>
+</div>
 
 
-  
+    </div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/10/14/biji/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/27/keil5/">keil5快捷键</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/12/nano/">nano快捷键</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/02/devcpp/">dev-cpp快捷键</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/27/typora/">typora快捷键</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 li Chengbin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <div id="pager"><a href="/page/2/" class="more" data-loading="加载中..." data-load-more="Load more">Load more</a></div>
     
+</div>
+<div id="preview"></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
 </body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2021
+        <span class="gradient-text">
+            li Chengbin
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149874671-1');
+</script>
+ 
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+ <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
+
 </html>
