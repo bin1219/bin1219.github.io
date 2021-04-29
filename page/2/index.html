@@ -1,55 +1,1805 @@
-extends base
+<!DOCTYPE html>
 
-block title
-  if config.subtitle
-    title= config.title + ' | ' + config.subtitle
-  else
-    title= config.title
 
-block content
-  for post in page.posts.toArray()
-    .post
-      h1.post-title
-        include _partial/helpers.pug
-        a(href=url_for(post.path))
-          +title(post)
-      .post-meta= post.date.format(config.date_format)
-      if theme.disqus.enable == true
-        a.disqus-comment-count(data-disqus-identifier=post.path, href=url_for(post.path) + '#disqus_thread')
-      if theme.changyan
-        a.ds-thread-count(href=url_for(post.path) + '#SOHUCS')
-          span.cy_cmt_count(id='sourceId::' + post.date.valueOf() style='margin: 0 3px 0 1px;') 0
-          span= ' ' + __('Comment')
-      if post.description
-        .post-content
-          != post.description
-      else if post.excerpt
-        .post-content
-          != post.excerpt
-      else if post.content
-        - var br = 0
-        - for (var i = 0; i < 5; ++i) {
-          - br = post.content.indexOf('\n',br+1)
-          if br<0
-            - break
-          if br >150
-            - break
-        - }
-        if br < 0
-          .post-content
-            != post.content
-        else
-          .post-content
-            != post.content.substring(0, br)
-      p(class='readmore')
-        a(href=url_for(post.path))= __('Readmore')
 
-  include _partial/paginator.pug
-  if theme.disqus.enable == true
-    script(id='dsq-count-scr', src='//'+ theme.disqus.shortname + '.disqus.com/count.js', async)
-  if theme.changyan
-    script#cy_cmt_num(src='https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=' + theme.changyan, async)
-  if config.mathjax
-    include _partial/mathjax.pug
-  if config.mathjax2
-    include _partial/mathjax2.pug
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Wode Hexo Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="been blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wode Hexo Blog">
+<meta property="og:url" content="https://bin1219.github.io/page/2/index.html">
+<meta property="og:site_name" content="Wode Hexo Blog">
+<meta property="og:description" content="been blog">
+<meta property="article:author" content="li Chengbin">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bin1219.github.io/page/2/"/>
+
+
+
+
+
+  <title>Wode Hexo Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wode Hexo Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/21/codeblocks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/21/codeblocks/" itemprop="url">codeblocks快捷键</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T22:24:02+08:00">
+                2020-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-编辑部分："><a href="#1-编辑部分：" class="headerlink" title="1.编辑部分："></a>1.编辑部分：</h2><p>按住Ctrl，滚动鼠标滚轮，放大或缩小字体。</p>
+<p>Ctrl+Shift+C注释掉当前行或选中部分，Ctrl+Shift+X解除注释。 </p>
+<p>Ctrl+T 和上一行交换位置。</p>
+<p>按住Ctrl再拖动选中内容，则将这部分内容在新位置复制一遍。</p>
+<p>按住Alt再方向键上下移动，则将这行上下移动。</p>
+<p>Tab：缩进当前行或选中块。</p>
+<p>Shift+Tab：减少缩进。</p>
+<p>写完关键词（如：if，for，while）后，按Ctrl+J自动补全格式。（格式和关键词可以自己去编辑器里设置）</p>
+<p>Ctrl+Z：撤销。</p>
+<p>Ctrl+Shift+Z：反悔撤销。</p>
+<p>Ctrl+C：复制。</p>
+<p>Ctrl+V：粘贴。</p>
+<p>Ctrl+X：剪切。</p>
+<p>Ctrl+A：全选。</p>
+<h2 id="2-编译与运行部分："><a href="#2-编译与运行部分：" class="headerlink" title="2.编译与运行部分："></a>2.编译与运行部分：</h2><p>Ctrl + F9：编译<br>Ctrl + F10：运行上次成功编译后的程序<br>Ctrl +　Shift + F9:编译当前文件（而不是当前打开的工程项目）<br>F9：编译并运行当前代码（如果编译错误会提示错误而不会运行）<br>F8：debug<br>F10:全屏<br>Ctrl + C：终止正在运行的程序<br>Ctrl + Z：终止输入</p>
+<h2 id="3-调试部分："><a href="#3-调试部分：" class="headerlink" title="3.调试部分："></a>3.调试部分：</h2><p>F5：在当前光标所在行设置断点</p>
+<p>F4：运行到光标所在行</p>
+<p>F8：开始调试</p>
+<p>Shift + F8：停止调试</p>
+<p>F7：下一行代码</p>
+<p>Shift + F7：进入下一行代码</p>
+<h2 id="4-界面部分："><a href="#4-界面部分：" class="headerlink" title="4.界面部分："></a>4.界面部分：</h2><p>F2和Shift+F2分别可以显隐下方Logs&amp; others栏和左方的Management栏</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/15/sublime-text/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/15/sublime-text/" itemprop="url">sublime快捷键</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T13:08:50+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="选择类"><a href="#选择类" class="headerlink" title="选择类"></a>选择类</h2><ul>
+<li>Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。</li>
+<li>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。</li>
+<li>Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。</li>
+<li>Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。</li>
+<li>Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。</li>
+<li>Ctrl+M 光标移动至括号内结束或开始的位置。</li>
+<li>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。</li>
+<li>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。</li>
+<li>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。</li>
+<li>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。</li>
+<li>Ctrl+K+0 展开所有折叠代码。</li>
+<li>Ctrl+← 向左单位性地移动光标，快速移动光标。</li>
+<li>Ctrl+→ 向右单位性地移动光标，快速移动光标。</li>
+<li>shift+↑ 向上选中多行。</li>
+<li>shift+↓ 向下选中多行。</li>
+<li>Shift+← 向左选中文本。</li>
+<li>Shift+→ 向右选中文本。</li>
+<li>Ctrl+Shift+← 向左单位性地选中文本。</li>
+<li>Ctrl+Shift+→ 向右单位性地选中文本。</li>
+<li>Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。</li>
+<li>Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。</li>
+<li>Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。</li>
+<li>Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。</li>
+</ul>
+<h2 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h2><ul>
+<li>Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。</li>
+<li>Ctrl+Shift+D  复制光标所在整行，插入到下一行。</li>
+<li>Tab 向右缩进。</li>
+<li>Shift+Tab 向左缩进。</li>
+<li>Ctrl+K+K 从光标处开始删除代码至行尾。</li>
+<li>Ctrl+Shift+K 删除整行。</li>
+<li>Ctrl+/ 注释单行。</li>
+<li>Ctrl+Shift+/ 注释多行。</li>
+<li>Ctrl+K+U 转换大写。</li>
+<li>Ctrl+K+L 转换小写。</li>
+<li>Ctrl+Z 撤销。</li>
+<li>Ctrl+Y 恢复撤销。</li>
+<li>Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。</li>
+<li>Ctrl+F2 设置书签</li>
+<li>Ctrl+T 左右字母互换。</li>
+<li>F6 单词检测拼写</li>
+</ul>
+<h2 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h2><ul>
+<li>Ctrl+F 打开底部搜索框，查找关键字。</li>
+<li>Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。</li>
+<li>Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。</li>
+<li>Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。</li>
+<li>Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。</li>
+<li>Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。</li>
+<li>Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。</li>
+<li>Esc 退出光标多行选择，退出搜索框，命令框等。</li>
+</ul>
+<h2 id="显示类"><a href="#显示类" class="headerlink" title="显示类"></a>显示类</h2><ul>
+<li>Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。</li>
+<li>Ctrl+PageDown 向左切换当前窗口的标签页。</li>
+<li>Ctrl+PageUp 向右切换当前窗口的标签页。</li>
+<li>Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字）</li>
+<li>Alt+Shift+2 左右分屏-2列</li>
+<li>Alt+Shift+3 左右分屏-3列</li>
+<li>Alt+Shift+4 左右分屏-4列</li>
+<li>Alt+Shift+5 等分4屏</li>
+<li>Alt+Shift+8 垂直分屏-2屏</li>
+<li>Alt+Shift+9 垂直分屏-3屏</li>
+<li>Ctrl+K+B 开启/关闭侧边栏。</li>
+<li>F11 全屏模式</li>
+<li>Shift+F11 免打扰模式</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/15/needn'tjQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/15/needn'tjQuery/" itemprop="url">jQuery and Vanilla JS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T08:12:38+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>选择器查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">// jQuery  </span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'selector'</span>)  </span><br><span class="line"><span class="number">3.</span> <span class="comment">// Vanilla  </span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>class查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'.class'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br><span class="line"><span class="number">6.</span></span><br><span class="line"><span class="number">7.</span> <span class="comment">// or</span></span><br><span class="line"><span class="number">8.</span> <span class="built_in">document</span>.getElementsByClassName(<span class="string">'class'</span>);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>属性查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'a[target=_blank]'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'a[target=_blank'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>后代查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.find(<span class="string">'li'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.querySelectorAll(<span class="string">'li'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p>兄弟及上下元素<br> 兄弟查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.siblings()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">[...el.parentNode.children].filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="built_in">Array</span>.from(el.parentNode.children).filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="built_in">Array</span>.prototype.filter.call(el.parentNode.children,(child)=&gt;</span><br><span class="line">	child !== el</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>iframe contents</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$iframe.contents().find(<span class="string">'.css'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">iframe.contentDocuument.querySelectorAll(<span class="string">'.css'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取data-属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.data(<span class="string">'foo'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.getAttribute(<span class="string">'data-foo'</span>)</span><br><span class="line">或</span><br><span class="line">el.dataset[<span class="string">'foo'</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p>has class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.hasClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.contains(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>toggle class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.toggleClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.toggle(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>document height</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">document</span>).height()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body</span><br><span class="line"><span class="keyword">const</span> html = <span class="built_in">document</span>.documentElement</span><br><span class="line"><span class="keyword">const</span> height = <span class="built_in">Math</span>.max(</span><br><span class="line">	body.offsetHeight,</span><br><span class="line">	body.scrollHeight,</span><br><span class="line">	html.clientHeight,</span><br><span class="line">	html.offsetHeight,</span><br><span class="line">	html.scrollHeight</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>element height</li>
+<li>position &amp; offset</li>
+<li>scroll top</li>
+</ul>
+<ol start="11">
+<li><p>remove</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.remove()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.parentNode.removeChild(el)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>text</p>
+</li>
+</ol>
+<ul>
+<li>get<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent</span><br></pre></td></tr></table></figure></li>
+<li>set<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text(string)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent = string</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="13">
+<li>html</li>
+</ol>
+<ul>
+<li><p>get</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML</span><br></pre></td></tr></table></figure></li>
+<li><p>set</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html(htmlString)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML = htmlString</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>append</p>
+</li>
+<li><p>prepend</p>
+</li>
+<li><p>insertBefore</p>
+</li>
+<li><p>insertAfter</p>
+</li>
+<li><p>is 如果匹配给定的选择器,返回true</p>
+</li>
+<li><p>clone 深拷贝被选元素(生成被选元素的副本,包含子节点,文本和属性)</p>
+</li>
+<li><p>empty 移除所有字节点</p>
+</li>
+<li><p>wrap 把每个被选元素放置在指定的HTML结构中</p>
+</li>
+<li><p>unwrap 移除被选元素的父元素的DOM结构</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/14/requirement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/14/requirement/" itemprop="url">软件需求分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T12:43:33+08:00">
+                2020-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h1><ol>
+<li>状态图属于<strong>动态</strong>模型。</li>
+<li>数据建模可以分为两个大的步骤，一是<strong>数据库逻辑设计</strong>，二是数据库物理设计。</li>
+<li>冰山模型是需要人员通过一些手段将客户的<strong>潜意识</strong>的需求进行捕获。</li>
+<li>界面作为人机交互的接口，要强调<strong>一人为本</strong></li>
+<li>用例是对<strong>系统功能</strong>的描述</li>
+<li><strong>建立客户在相关领域的信息化管理体系</strong>才是需求工作的目的。</li>
+<li>面向数据库开发的应用软件，一般可由数据，<strong>场景</strong>，界面三个部分构成。</li>
+<li>需求工程的任务是获取，<strong>分析</strong>和表达软件的需求</li>
+<li>需求评审根据评审的方式可分为正式评审和<strong>非正式评审</strong></li>
+<li>做到需求变更控制使用的手段包括<strong>技术手段</strong>、沟通说服、成本约束。</li>
+<li>需求获取在需求工程中是<strong>主体</strong>地位</li>
+<li>数字模型是软件过程中可以以<strong>数字方式</strong>直接传递并形成相关环节产出物的模型。</li>
+<li>“实现用户正确的需求”是软件设计的<strong>工作原则</strong></li>
+<li>需求文档是需求分析的<strong>成果物</strong></li>
+<li>用例图是由参与者、用例以及他们之间的关系构成的，用于描述<strong>系统功能</strong></li>
+<li>需求规格说明是用户与软件开发方将要开发的软件达成的一致协议或称<strong>技术合同</strong></li>
+<li>界面设计通过<strong>视觉</strong>，<strong>听觉</strong>甚至嗅觉、触觉感受到软件相关信息的媒介</li>
+<li>需求验证严格的说就是检验<strong>需求规格说明书</strong></li>
+</ol>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ol>
+<li>需求分析<br>是开发人员经过深入细致的调研和分析，准确理解用户和项目的功能、性能、可靠性等具体要求，将用户非形式的需求表述转化为完整的需求定义，从而确定软件必须做什么的过程。</li>
+<li>信息孤岛<br>信息被分割成许多独立块，块与块之间缺少有效的联系手段，犹如海洋中孤零零的岛屿。</li>
+<li>单据分析法<br>分析用户当前使用的纸质或电子单据，通过研究这些单据所承载的信息，分析其产生、流动的方式，从而熟悉业务，挖掘需求。</li>
+</ol>
+<h2 id="简答"><a href="#简答" class="headerlink" title="简答"></a>简答</h2><ol>
+<li>原型设计用的方法<br>Office工具设计法；原型工具设计法；开发工具设计法；直接开发法;手画法；</li>
+<li>需求分析的主要任务<br>对客户的信息化需求进行分析，将客户不规范的、随意的需求，转换成规范的、严谨的、结构化的需求；<br>将客户不正确的需求转换成正确的需求；将客户不切实际的需求转换为可以实现的需求；<br>将客户不必要的需求砍掉，将客户漏掉的需求补上等等。</li>
+<li>好的管理软件要具备什么样的特性<br>有用的；易学的；易用的；灵活的；健壮的；高效的；方便交互的；可重用的；</li>
+<li>需求变更产生的原因<br>调研不充分；沟通有歧义；异常没考虑；规划不到位；设计有瑕疵；实现欠灵活；实施不熟练；业务会变化；管理在改善；想法在改变；软件要发展；</li>
+<li>什么是数据建模<br>数据建模就算为了企业信息化管理的需要，分析企业的信息实体、实体之间的关系、每个实体包含的属性，从而设计出数据库需要哪些表，每个表应包含哪些字段，对存储的数据有什么要求，表与表之间有什么关系等。数据建模工作的最终交付物是数据库的表结构——数据模型。</li>
+<li>需求获取常用的方法（不少于4种）<br>观察法；体验法；问卷调查法；访谈法；单据分析法；报表分析法；需求调研法；</li>
+<li>正式访谈的一般过程<br>访谈对象确定；访谈准备；访谈预约；访谈进行；访谈结果整理；访谈结果确认；</li>
+<li>需求管理过程中包括哪三个环节？他们之间的关系是怎样的？<br>包括基线管理、变更管理和需求跟踪。需求跟踪是避免软件在开发过程中与需求基线不一致或者偏离的风险，变更管理指以可控，一致的方式进行需求基线中需求的变更处理。</li>
+<li>简述需求规格说明书的作用<br>帮助回忆之前的需求的工作，通过回忆，看是否有需求问题。<br>对需求分析提供解决方案<br>后续活动的依据<br>作为双方协议的组成部分。</li>
+</ol>
+<h2 id="论述"><a href="#论述" class="headerlink" title="论述"></a>论述</h2><ol>
+<li>谈一谈一个需求分析师的主要工作<br>(1)进行需求调研，获取用户需求<br>(2)进行系统规划，设计客户信息化管理的蓝图<br>(3)设计数据模型；<br>(4)设计软件功能;<br>(5)设计软件界面，绘制软件原型;<br>(6)召开需求评审会，收集各方面的意见，根据意见修改设计<br>(7)指导开发，协助测试<br>(8)进行软件变更需求分析，设计变更解决方案</li>
+<li>问卷调查法作为需求收集方法，我们在使用的时候应考虑哪些问题，他的优势与局限有哪些？<br>应考虑：<br>1）设计的问题必须符合客观实际情况，<br>2）不同的答题问卷选择不同的答题者<br>3）问题的内容要具体，单一，通俗易懂，表述要准确，简单明了<br>优势：<br>1）对于调研者，不需要多次面对面沟通就能获取大量有用的信息。<br>2）对于被调研者，不需要打断自己的工作，可以合理安排回答的时间，还可以进行更仔细的思考。<br>局限性：一是限于答卷者的态度、相关的业务特点与文字能力；<br>二是限于调查问卷的编写质量。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/14/chromedev-use/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/14/chromedev-use/" itemprop="url">Chrome devtools</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T10:09:59+08:00">
+                2020-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="搜索，导航和过滤器"><a href="#搜索，导航和过滤器" class="headerlink" title="搜索，导航和过滤器"></a>搜索，导航和过滤器</h1><ol>
+<li>在任意面板进行文件检索</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>O</kbd>(windows,linux)<br><kbd>Cmd</kbd>+<kbd>O</kbd>(mac os x)</p>
+<ol start="2">
+<li>在当前文件内搜索</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>F</kbd>(windows,linux)<br><kbd>Cmd</kbd>+<kbd>F</kbd>(mac os x)</p>
+<ol start="3">
+<li>全局文本搜索</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>(windows, linux)<br><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>F</kbd>(mac os x)<br><strong>搜索支持大小写敏感和正则表达式</strong></p>
+<ol start="4">
+<li>函数过滤器或者文件内选择器</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>(windows, linux)<br><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd>(max os x)</p>
+<ol start="5">
+<li>跳转到特定行号</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>L</kbd>(windows)<br><kbd>Cmd</kbd>+<kbd>L</kbd>(max os x)<br><kbd>Ctrl</kbd>+<kbd>G</kbd>(linux)</p>
+<ol start="6">
+<li>Run Command</li>
+</ol>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></p>
+<h1 id="使用控制台"><a href="#使用控制台" class="headerlink" title="使用控制台"></a>使用控制台</h1><ol>
+<li>打开命令行</li>
+</ol>
+<p><kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>J</kbd>(mac)<br><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>(windows)</p>
+<ol start="2">
+<li>清空控制台</li>
+</ol>
+<p>在javascript脚本中调用console.clear()<br><kbd>Cmd</kbd>+<kbd>K</kbd>,<kbd>^</kbd>+<kbd>L</kbd>(mac)<br><kbd>Ctrl</kbd>+<kbd>L</kbd>(windows,linux)</p>
+<ol start="3">
+<li>查看数据结构</li>
+</ol>
+<p><code>console.table()</code></p>
+<ol start="4">
+<li>监控事件</li>
+</ol>
+<p>montiorEvents()<br>结束监控事件 unmonitorEvents()</p>
+<h1 id="xpath语法"><a href="#xpath语法" class="headerlink" title="xpath语法"></a>xpath语法</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/13/hexo-use/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/13/hexo-use/" itemprop="url">hexo使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-13T18:21:28+08:00">
+                2020-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="hexo基本使用"><a href="#hexo基本使用" class="headerlink" title="hexo基本使用"></a>hexo基本使用</h1><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<p>新建网站</p>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章</p>
+<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">或</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件</p>
+<h2 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>发表草稿</p>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器</p>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>部署网站</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo render &lt;file1&gt; [file2] ...</span><br></pre></td></tr></table></figure>
+
+<p>渲染文件</p>
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件(db.json)和已生成的静态文件(public).<br>在某些情况(尤其是更换主题后),如果更改无论如何也不生效,可以运行该命令.</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo list &lt;type&gt;</span><br></pre></td></tr></table></figure>
+
+<p>列出网站资料</p>
+<h1 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/12/use-github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/12/use-github/" itemprop="url">学习github</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-12T21:21:39+08:00">
+                2020-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1</p>
+<h2 id="github使用"><a href="#github使用" class="headerlink" title="github使用"></a>github使用</h2><h3 id="github命令"><a href="#github命令" class="headerlink" title="github命令"></a>github命令</h3><p>git上配置github环境</p>
+<p><strong>1. windows 下 Git Bash Here</strong></p>
+<blockquote>
+<p>配置全局用户名: git config –global user.name 你的用户名(一般是github用户名)</p>
+</blockquote>
+<blockquote>
+<p>配置全局邮箱: git config –global user.email 你的邮箱(一般是github认证邮箱)</p>
+</blockquote>
+<blockquote>
+<p>生成ssh密钥: ssh-keygen-t rsa -C 你的github认证邮箱</p>
+</blockquote>
+<p>然后在 %userprofile%/.ssh目录下有三个文件,id_rsa,id_rsa.pub,known_hosts.</p>
+<p><strong>2. git基本使用</strong></p>
+<blockquote>
+<p>从github上clone一个项目到本地: git clone ssh/https</p>
+</blockquote>
+<blockquote>
+<p>在本地初始化一个git仓库: git init</p>
+</blockquote>
+<blockquote>
+<p>添加与本地仓库联系的远程仓库: git remote add 别名 ssh/https</p>
+</blockquote>
+<p>别名为. 可以添加所有修改后的文件到缓存</p>
+<blockquote>
+<p>修改文件后，将文件添加到本地仓库: git add .(files)</p>
+</blockquote>
+<blockquote>
+<p>将修改后的内容上传到远程仓库: git push 别名 master(branch)</p>
+</blockquote>
+<blockquote>
+<p>提交修改: git commit -m ‘你的commit’</p>
+</blockquote>
+<p>这步必须,如果没会要求在git push 后输入(没提示)</p>
+<p>提交过程应该连续,commit后再修改文件将push不成功</p>
+<blockquote>
+<p>从远程仓库下载最新内容到本地仓库: git pull 别名 master(branch)</p>
+</blockquote>
+<blockquote>
+<p>删除本地仓库与远程仓库的关联: git remote rm 别名</p>
+</blockquote>
+<p><strong>3. 其他命令</strong></p>
+<blockquote>
+<p>status命令</p>
+</blockquote>
+<p>git status : 显示工作树的状态,一般有三种</p>
+<ol>
+<li>Untracked files: 未被跟踪的文件,表示是工作目录增加的文件</li>
+<li>Changes not staged for commit: 工作目录修改了文件,但是没有被添加到暂存区</li>
+<li>Changes to be committed: 添加到暂存区的文件,等待提价</li>
+</ol>
+<blockquote>
+<p>reset命令</p>
+</blockquote>
+<p>git reset : 将暂存区的所有文件重置到当前分支的HEAD</p>
+<ol>
+<li>git reset <commit> files : 将暂存区的指定文件重置到指定的<commit></li>
+<li>git reset [–hard|soft|mixed|merge|keep] [<commit>]<br> mode的取值可以是hard,soft,mixed,merged,keep.<br> hard:重置暂存区与工作目录到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交,此操作危险指数较大(慎用)<br> soft:暂存区与工作目录不会变化,仅仅删除<commit>之后的所有提交并将HEAD指向该提交<br> mixed:默认的,重置暂存区到指定提交,删除<commit>之后的所有提交并将HEAD指向该提交<br> merge与keep …<br>…</li>
+</ol>
+<p>总结:git是工具,有好多用法,根据需要去使用,多看说明书.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/06/22/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/22/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-22T18:16:39+08:00">
+                2020-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">li Chengbin</p>
+              <p class="site-description motion-element" itemprop="description">been blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">li Chengbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

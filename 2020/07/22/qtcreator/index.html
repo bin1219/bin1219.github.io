@@ -1,54 +1,675 @@
-extends base
+<!DOCTYPE html>
 
-block title
-  title= page.title + ' | ' + config.title
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format(config.date_format)
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus.enable == true
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true && page.donate != false
-      include _widget/donate.pug
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      include _widget/copyright.pug
+  
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-    if page.comments
-      include _partial/comments.pug
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Wode Hexo Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一般快捷键打开文件或项目(O)      Ctrl+O新建文件或项目(N)    Ctrl+N在外部编辑器中打开  Alt+V, Alt+I全选(A)    Ctrl+A删除    Del剪切(T)  Ctrl+X复制(C)    Ctrl+C粘贴     Ctrl+V撤销     Ctrl+Y打印     Ctrl+P保存     Ctrl+S保存所有文件(L)…    CTRL+Shift+S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="qt creator快捷键">
+<meta property="og:url" content="https://bin1219.github.io/2020/07/22/qtcreator/index.html">
+<meta property="og:site_name" content="Wode Hexo Blog">
+<meta property="og:description" content="一般快捷键打开文件或项目(O)      Ctrl+O新建文件或项目(N)    Ctrl+N在外部编辑器中打开  Alt+V, Alt+I全选(A)    Ctrl+A删除    Del剪切(T)  Ctrl+X复制(C)    Ctrl+C粘贴     Ctrl+V撤销     Ctrl+Y打印     Ctrl+P保存     Ctrl+S保存所有文件(L)…    CTRL+Shift+S">
+<meta property="article:published_time" content="2020-07-22T13:06:07.577Z">
+<meta property="article:modified_time" content="2020-07-22T13:32:22.243Z">
+<meta property="article:author" content="li Chengbin">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bin1219.github.io/2020/07/22/qtcreator/"/>
+
+
+
+
+
+  <title>qt creator快捷键 | Wode Hexo Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wode Hexo Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/22/qtcreator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">qt creator快捷键</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-22T21:06:07+08:00">
+                2020-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一般快捷键"><a href="#一般快捷键" class="headerlink" title="一般快捷键"></a>一般快捷键</h2><p>打开文件或项目(O)      Ctrl+O<br>新建文件或项目(N)    Ctrl+N<br>在外部编辑器中打开  Alt+V, Alt+I<br>全选(A)    Ctrl+A<br>删除    Del<br>剪切(T)  Ctrl+X<br>复制(C)    Ctrl+C<br>粘贴     Ctrl+V<br>撤销     Ctrl+Y<br>打印     Ctrl+P<br>保存     Ctrl+S<br>保存所有文件(L)…    CTRL+Shift+S<br>关闭窗口    Ctrl+W<br>关闭所有文件    Ctrl+Shift+W<br>关闭当前文件    Ctrl+F4<br>后退    Alt+Left<br>前进    Alt+Right<br>跳转行(G)…    Ctrl+L<br>历史中下个打开的文件    Ctrl+Shift+Tab<br>切换到其他分栏    Ctrl+E, O<br>历史中先前打开的文件    Ctrl+Tab<br>激活定位器    Ctrl+K<br>切换到欢迎模式    Ctrl+1<br>切换到编辑模式    Ctrl+2<br>切换到设计模式    Ctrl+3<br>切换到调试模式    Ctrl+4<br>切换到项目模式    Ctrl+5<br>切换到分析模式    Ctrl+6<br>切换到帮助模式    Ctrl+7<br>切换问题窗口    Alt+1 (Cmd+1 on OS X)<br>切换搜索结果窗口    Alt+2 (Cmd+2 on OS X)<br>切换应用程序输出窗口    Alt+3 (Cmd+3 on OS X)<br>切换编译输出窗口    Alt+4 (Cmd+4 on OS X)<br>切换其它输出窗口    Alt+编号 (Cmd+编号 on OS X) 编号为”输出窗口”中的编号<br>激活书签窗口    Alt+M<br>激活文件系统窗口    Alt+Y<br>激活打开文档窗口    Alt+O<br>最大化输出窗口    Alt+9<br>输出窗口-下一项    F6<br>输出窗口-上一项    Shift+F6<br>激活项目窗口    Alt+X<br>全屏    Ctrl+Shift+F11<br>切换侧边栏    Alt+0 (Cmd+0 on OS X)<br>撤销    Ctrl+Z<br>移动到编辑模式。在编辑模式下：第一次按下将焦点移动到编辑器中，第二次按下关闭辅助窗口    Esc<br>退出Qt Creator    Ctrl+Q  </p>
+<h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><p>自动缩进    Ctrl+I<br>折叠    Ctrl+&lt;<br>展开    Ctrl+&gt;<br>在此范围内触发完成    Ctrl+Space<br>复制行    Ctrl+Ins<br>复制到行下    Ctrl+Alt+Down<br>复制到行上    Ctrl+Alt+Up<br>查看剪切板历史    Ctrl+Shift+V<br>剪切行    Shift+Del<br>追加行    Ctrl+J<br>在当前行上方插入新行    Ctrl+Shift+Enter<br>在当前行下方插入新行    Ctrl+Enter<br>减小字体大小    Ctrl+- (Ctrl+鼠标滚轮向下)<br>增加字体大小    Ctrl++ (Ctrl+鼠标滚轮向上)<br>重置字体大小    Ctrl+0<br>切换Vim的编辑风格    Alt+V, Alt+V<br>分栏    Ctrl+E, 2<br>左右分栏    Ctrl+E, 3<br>删除所有分割    Ctrl+E, 1<br>删除当前分割    Ctrl+E, 0<br>全选    Ctrl+A<br>跳转至块结尾    Ctrl+]<br>跳转至块开始    Ctrl+[<br>跳转至以}结尾的块    Ctrl+}<br>跳转至以{开始的块    Ctrl+{<br>向下移动当前行    Ctrl+Shift+Down<br>向上移动当前行    Ctrl+Shift+Up<br>在此范围激活重构    Alt+Enter<br>重新包装段    Ctrl+E, R<br>选择当前块，第二次按下选择父块    Ctrl+U<br>启用文本换行    Ctrl+E, Ctrl+W<br>注释选中的内容    Ctrl+/<br>可视化的空白    Ctrl+E, Ctrl+V<br>调整大小    Ctrl+J<br>网格布局    Ctrl+G<br>水平布局    Ctrl+H<br>垂直布局    Ctrl+L<br>预览    Alt+Shift+R<br>编辑信号和槽    F4<br>切换书签    CTRL+M<br>下个书签    Ctrl+.<br>上个书签    Ctrl+,<br>取得代码片段    Alt+C, Alt+F<br>粘贴代码片段    Alt+C, Alt+P<br>查找所有引用    Ctrl+Shift+U<br>跟随鼠标下的符号    F2<br>重命名光标所在符号    Ctrl+Shift+R<br>切换函数声明/定义    Shift+F2<br>打开类型层次窗口    Ctrl+Shift+T<br>切换头文件/源文件    F4<br>选中的文本变小写    Alt+U<br>选中的文本变大写    Alt+Shift+U<br>在JavaScript中执行静态检查来查找共同问题    Ctrl+Shift+C<br>查找和替换    Ctrl+F<br>向下查找    F3<br>向上查找    Shift+F3<br>查找选中文本下一次出现    Ctrl+F3<br>查找选中文本上一次出现    Ctrl+Shift+F3<br>替换和查找下一个    Ctrl+=<br>打开高级搜索    Ctrl+Shift+F<br>录制宏    Alt+(<br>停止录制宏    Alt+)<br>播放最近的宏    Alt+R<br>显示Qt Quick工具栏    Ctrl+Alt+Space<br>在FakeVim模式执行用户行为    Alt+V, n, 其中n是用户动作的数量, 从1到9  </p>
+<h2 id="图像浏览器快捷键"><a href="#图像浏览器快捷键" class="headerlink" title="图像浏览器快捷键"></a>图像浏览器快捷键</h2><p>切换背景    Ctrl+[<br>显示轮廓线    Ctrl+]<br>放大    Ctrl++<br>缩小    Ctrl+-<br>适应屏幕    Ctrl+=<br>原始大小    Ctrl+0  </p>
+<h2 id="Qt-Quick设计师快捷键"><a href="#Qt-Quick设计师快捷键" class="headerlink" title="Qt Quick设计师快捷键"></a>Qt Quick设计师快捷键</h2><p>打开定义所选组件的QML文件    F2<br>切换代码编辑器/可视化编辑器    F4<br>切换左侧侧边栏    Ctrl+Alt+0<br>切换右侧侧边栏    Ctrl+Alt+Shift+0  </p>
+<h2 id="调试快捷键"><a href="#调试快捷键" class="headerlink" title="调试快捷键"></a>调试快捷键</h2><p>开始/继续调试    F5<br>停止调试    Shift+F5<br>单步跳过    F10<br>单步进入    F11<br>单步跳出    Shift+F11<br>切换断点    F9<br>运行到选择的函数    Ctrl+F6<br>执行到行    Ctrl+F10<br>相反方向    F12(暂无)  </p>
+<h2 id="项目快捷键"><a href="#项目快捷键" class="headerlink" title="项目快捷键"></a>项目快捷键</h2><p>构建项目    Ctrl+B<br>构建所有项目    Ctrl+Shift+B<br>新建项目…    Ctrl+Shift+N<br>载入项目…    Ctrl+Shift+O<br>选择构建套件(Kit)构建和运行项目    Ctrl+T<br>运行    Ctrl+R  </p>
+<h2 id="帮助快捷键"><a href="#帮助快捷键" class="headerlink" title="帮助快捷键"></a>帮助快捷键</h2><p>上下文相关帮助    F1<br>在帮助模式下激活内容    Ctrl+T(暂无)<br>添加书签    Ctrl+M<br>在帮助模式下激活索引    Ctrl+I(暂无)<br>重置字体大小    Ctrl+0(暂无)<br>在帮助模式下激活查找    Ctrl+S(暂wu)  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/21/codeblocks/" rel="next" title="codeblocks快捷键">
+                <i class="fa fa-chevron-left"></i> codeblocks快捷键
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/23/potplayer/" rel="prev" title="potplayer快捷键">
+                potplayer快捷键 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">li Chengbin</p>
+              <p class="site-description motion-element" itemprop="description">been blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般快捷键"><span class="nav-number">1.</span> <span class="nav-text">一般快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑快捷键"><span class="nav-number">2.</span> <span class="nav-text">编辑快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像浏览器快捷键"><span class="nav-number">3.</span> <span class="nav-text">图像浏览器快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Qt-Quick设计师快捷键"><span class="nav-number">4.</span> <span class="nav-text">Qt Quick设计师快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试快捷键"><span class="nav-number">5.</span> <span class="nav-text">调试快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目快捷键"><span class="nav-number">6.</span> <span class="nav-text">项目快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助快捷键"><span class="nav-number">7.</span> <span class="nav-text">帮助快捷键</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">li Chengbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

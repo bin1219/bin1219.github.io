@@ -1,54 +1,722 @@
-extends base
+<!DOCTYPE html>
 
-block title
-  title= page.title + ' | ' + config.title
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format(config.date_format)
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus.enable == true
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable
-      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true && page.donate != false
-      include _widget/donate.pug
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      include _widget/copyright.pug
+  
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-    if page.comments
-      include _partial/comments.pug
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Wode Hexo Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="选择器查询  12341. &#x2F;&#x2F; jQuery  2. $(&#39;selector&#39;)  3. &#x2F;&#x2F; Vanilla  4. document.querySelectorAll(&#39;.class&#39;)  class查询  123456781. &#x2F;&#x2F;jQuery2. $(&#39;.class&#39;);3.4. &#x2F;&#x2F; Vanilla5. document.querySelectorAll(&#39;.class&#39;)6.7.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery and Vanilla JS">
+<meta property="og:url" content="https://bin1219.github.io/2020/07/15/needn'tjQuery/index.html">
+<meta property="og:site_name" content="Wode Hexo Blog">
+<meta property="og:description" content="选择器查询  12341. &#x2F;&#x2F; jQuery  2. $(&#39;selector&#39;)  3. &#x2F;&#x2F; Vanilla  4. document.querySelectorAll(&#39;.class&#39;)  class查询  123456781. &#x2F;&#x2F;jQuery2. $(&#39;.class&#39;);3.4. &#x2F;&#x2F; Vanilla5. document.querySelectorAll(&#39;.class&#39;)6.7.">
+<meta property="article:published_time" content="2020-07-15T00:12:38.972Z">
+<meta property="article:modified_time" content="2020-07-15T04:32:23.872Z">
+<meta property="article:author" content="li Chengbin">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://bin1219.github.io/2020/07/15/needn'tjQuery/"/>
+
+
+
+
+
+  <title>jQuery and Vanilla JS | Wode Hexo Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wode Hexo Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bin1219.github.io/2020/07/15/needn'tjQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="li Chengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wode Hexo Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery and Vanilla JS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T08:12:38+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>选择器查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">// jQuery  </span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'selector'</span>)  </span><br><span class="line"><span class="number">3.</span> <span class="comment">// Vanilla  </span></span><br><span class="line"><span class="number">4.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>class查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'.class'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>)</span><br><span class="line"><span class="number">6.</span></span><br><span class="line"><span class="number">7.</span> <span class="comment">// or</span></span><br><span class="line"><span class="number">8.</span> <span class="built_in">document</span>.getElementsByClassName(<span class="string">'class'</span>);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>属性查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="comment">//jQuery</span></span><br><span class="line"><span class="number">2.</span> $(<span class="string">'a[target=_blank]'</span>);</span><br><span class="line"><span class="number">3.</span></span><br><span class="line"><span class="number">4.</span> <span class="comment">// Vanilla</span></span><br><span class="line"><span class="number">5.</span> <span class="built_in">document</span>.querySelectorAll(<span class="string">'a[target=_blank'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>后代查询</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.find(<span class="string">'li'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.querySelectorAll(<span class="string">'li'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p>兄弟及上下元素<br> 兄弟查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.siblings()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">[...el.parentNode.children].filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="built_in">Array</span>.from(el.parentNode.children).filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">	child !== el</span><br><span class="line">)</span><br><span class="line"><span class="built_in">Array</span>.prototype.filter.call(el.parentNode.children,(child)=&gt;</span><br><span class="line">	child !== el</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>iframe contents</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$iframe.contents().find(<span class="string">'.css'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">iframe.contentDocuument.querySelectorAll(<span class="string">'.css'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取data-属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.data(<span class="string">'foo'</span>)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.getAttribute(<span class="string">'data-foo'</span>)</span><br><span class="line">或</span><br><span class="line">el.dataset[<span class="string">'foo'</span>]</span><br></pre></td></tr></table></figure></li>
+<li><p>has class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.hasClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.contains(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>toggle class</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.toggleClass(className)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.classList.toggle(className)</span><br></pre></td></tr></table></figure></li>
+<li><p>document height</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">document</span>).height()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body</span><br><span class="line"><span class="keyword">const</span> html = <span class="built_in">document</span>.documentElement</span><br><span class="line"><span class="keyword">const</span> height = <span class="built_in">Math</span>.max(</span><br><span class="line">	body.offsetHeight,</span><br><span class="line">	body.scrollHeight,</span><br><span class="line">	html.clientHeight,</span><br><span class="line">	html.offsetHeight,</span><br><span class="line">	html.scrollHeight</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>element height</li>
+<li>position &amp; offset</li>
+<li>scroll top</li>
+</ul>
+<ol start="11">
+<li><p>remove</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.remove()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.parentNode.removeChild(el)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>text</p>
+</li>
+</ol>
+<ul>
+<li>get<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent</span><br></pre></td></tr></table></figure></li>
+<li>set<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text(string)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.textContent = string</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="13">
+<li>html</li>
+</ol>
+<ul>
+<li><p>get</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html()</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML</span><br></pre></td></tr></table></figure></li>
+<li><p>set</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html(htmlString)</span><br><span class="line"><span class="comment">// Vanilla</span></span><br><span class="line">el.innerHTML = htmlString</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>append</p>
+</li>
+<li><p>prepend</p>
+</li>
+<li><p>insertBefore</p>
+</li>
+<li><p>insertAfter</p>
+</li>
+<li><p>is 如果匹配给定的选择器,返回true</p>
+</li>
+<li><p>clone 深拷贝被选元素(生成被选元素的副本,包含子节点,文本和属性)</p>
+</li>
+<li><p>empty 移除所有字节点</p>
+</li>
+<li><p>wrap 把每个被选元素放置在指定的HTML结构中</p>
+</li>
+<li><p>unwrap 移除被选元素的父元素的DOM结构</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/14/requirement/" rel="next" title="软件需求分析">
+                <i class="fa fa-chevron-left"></i> 软件需求分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/15/sublime-text/" rel="prev" title="sublime快捷键">
+                sublime快捷键 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">li Chengbin</p>
+              <p class="site-description motion-element" itemprop="description">been blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">li Chengbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
