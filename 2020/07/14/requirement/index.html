@@ -1,485 +1,54 @@
+extends base
 
-<!DOCTYPE html>
-<html lang="zh-Hans" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>软件需求分析 - Wode Hexo Blog</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="been blog,填空
-状态图属于动态模型。
-数据建模可以分为两个大的步骤，一是数据库逻辑设计，二是数据库物理设计。
-冰山模型是需要人员通过一些手段将客户的潜意识的需求进行捕获。
-界面作为人机交互的接口，要强调一人为,"> 
-    <meta name="author" content="li Chengbin"> 
-    <link rel="alternative" href="atom.xml" title="Wode Hexo Blog" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+block title
+  title= page.title + ' | ' + config.title
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+block content
+  .post
+    h1.post-title= page.title
+    .post-meta= page.date.format(config.date_format)
+      if page.categories.length > 0
+        span= ' | '
+        span.category
+          for category in page.categories.toArray()
+            a(href=url_for(category.path))= category.name
+      if theme.busuanzi == true
+        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
+        span#busuanzi_container_page_pv= ' | '
+          span#busuanzi_value_page_pv
+          span= ' ' + __('Hits')
+      if theme.wordcount == true
+        include _partial/wordcount.pug
+    if theme.disqus.enable == true
+      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
+    if theme.changyan
+      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
+        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
+        span= ' ' + __('Comment')
+      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
+    if theme.valine.enable
+      a.disqus-comment-count( href=url_for(page.path) + '#vcomment')
+        span.valine-comment-count(data-xid=url_for(page.path))
+        span= ' ' + __('Comment')
+    if page.toc
+      div(class='clear')
+        div(id='toc' class='toc-article')
+          div(class='toc-title')= __('contents')
+          != toc(page.content, {list_number: theme.toc_number})
+    .post-content
+      != page.content
+    if theme.donate.enable == true && page.donate != false
+      include _widget/donate.pug
 
-    
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    if theme.post_copyright.enable == true && page.copyright != false
+      include _widget/copyright.pug
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    if theme.shareto == true
+      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
+      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    include _partial/tag.pug
+    include _partial/post_nav.pug
 
-    
-<link rel="stylesheet" href="/css/obsidian.css">
-
-    
-<link rel="stylesheet" href="/css/ball-atom.min.css">
-
-    
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-
-<body class="loading">
-    <div class="loader">
-        <div class="la-ball-atom la-2x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <span id="config-title" style="display:none">Wode Hexo Blog</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div class="scrollbar gradient-bg-rev"></div>
-<div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://bin1219.github.io">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">软件需求分析</h3>
-        <div class="social">
-            <!--        <div class="like-icon">-->
-            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-            <!--        </div>-->
-            <div>
-                <div class="share">
-                    
-                        <a href="javascript:;" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div class="section">
-        <div class=article-header-wrapper>
-    <div class="article-header">
-        <div class="article-cover animated fadeIn" style="
-            animation-delay: 600ms;
-            animation-duration: 1.2s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/cover.jpg) ">
-        </div>
-        <div class="else">
-            <p class="animated fadeInDown">
-                
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-                
-                July 14, 2020
-            </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/07/14/requirement/" title="软件需求分析" class="">软件需求分析</a>
-            </h3>
-            
-            <p class="post-count animated fadeInDown">
-                
-                <span>
-                    <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    2.8k
-                </span>
-                
-                
-                <span>
-                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
-                </span>
-                
-                
-                
-                <span id="busuanzi_container_page_pv">
-                    <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span id="busuanzi_value_page_pv">0</span>
-                </span>
-                
-            </p>
-            
-            
-        </div>
-    </div>
-</div>
-
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                    <span class="animated fadeIn delay-1s"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="article">
-    <div class='main'>
-        <div class="content markdown animated fadeIn">
-            <h1 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h1><ol>
-<li>状态图属于<strong>动态</strong>模型。</li>
-<li>数据建模可以分为两个大的步骤，一是<strong>数据库逻辑设计</strong>，二是数据库物理设计。</li>
-<li>冰山模型是需要人员通过一些手段将客户的<strong>潜意识</strong>的需求进行捕获。</li>
-<li>界面作为人机交互的接口，要强调<strong>一人为本</strong></li>
-<li>用例是对<strong>系统功能</strong>的描述</li>
-<li><strong>建立客户在相关领域的信息化管理体系</strong>才是需求工作的目的。</li>
-<li>面向数据库开发的应用软件，一般可由数据，<strong>场景</strong>，界面三个部分构成。</li>
-<li>需求工程的任务是获取，<strong>分析</strong>和表达软件的需求</li>
-<li>需求评审根据评审的方式可分为正式评审和<strong>非正式评审</strong></li>
-<li>做到需求变更控制使用的手段包括<strong>技术手段</strong>、沟通说服、成本约束。</li>
-<li>需求获取在需求工程中是<strong>主体</strong>地位</li>
-<li>数字模型是软件过程中可以以<strong>数字方式</strong>直接传递并形成相关环节产出物的模型。</li>
-<li>“实现用户正确的需求”是软件设计的<strong>工作原则</strong></li>
-<li>需求文档是需求分析的<strong>成果物</strong></li>
-<li>用例图是由参与者、用例以及他们之间的关系构成的，用于描述<strong>系统功能</strong></li>
-<li>需求规格说明是用户与软件开发方将要开发的软件达成的一致协议或称<strong>技术合同</strong></li>
-<li>界面设计通过<strong>视觉</strong>，<strong>听觉</strong>甚至嗅觉、触觉感受到软件相关信息的媒介</li>
-<li>需求验证严格的说就是检验<strong>需求规格说明书</strong></li>
-</ol>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ol>
-<li>需求分析<br>是开发人员经过深入细致的调研和分析，准确理解用户和项目的功能、性能、可靠性等具体要求，将用户非形式的需求表述转化为完整的需求定义，从而确定软件必须做什么的过程。</li>
-<li>信息孤岛<br>信息被分割成许多独立块，块与块之间缺少有效的联系手段，犹如海洋中孤零零的岛屿。</li>
-<li>单据分析法<br>分析用户当前使用的纸质或电子单据，通过研究这些单据所承载的信息，分析其产生、流动的方式，从而熟悉业务，挖掘需求。</li>
-</ol>
-<h2 id="简答"><a href="#简答" class="headerlink" title="简答"></a>简答</h2><ol>
-<li>原型设计用的方法<br>Office工具设计法；原型工具设计法；开发工具设计法；直接开发法;手画法；</li>
-<li>需求分析的主要任务<br>对客户的信息化需求进行分析，将客户不规范的、随意的需求，转换成规范的、严谨的、结构化的需求；<br>将客户不正确的需求转换成正确的需求；将客户不切实际的需求转换为可以实现的需求；<br>将客户不必要的需求砍掉，将客户漏掉的需求补上等等。</li>
-<li>好的管理软件要具备什么样的特性<br>有用的；易学的；易用的；灵活的；健壮的；高效的；方便交互的；可重用的；</li>
-<li>需求变更产生的原因<br>调研不充分；沟通有歧义；异常没考虑；规划不到位；设计有瑕疵；实现欠灵活；实施不熟练；业务会变化；管理在改善；想法在改变；软件要发展；</li>
-<li>什么是数据建模<br>数据建模就算为了企业信息化管理的需要，分析企业的信息实体、实体之间的关系、每个实体包含的属性，从而设计出数据库需要哪些表，每个表应包含哪些字段，对存储的数据有什么要求，表与表之间有什么关系等。数据建模工作的最终交付物是数据库的表结构——数据模型。</li>
-<li>需求获取常用的方法（不少于4种）<br>观察法；体验法；问卷调查法；访谈法；单据分析法；报表分析法；需求调研法；</li>
-<li>正式访谈的一般过程<br>访谈对象确定；访谈准备；访谈预约；访谈进行；访谈结果整理；访谈结果确认；</li>
-<li>需求管理过程中包括哪三个环节？他们之间的关系是怎样的？<br>包括基线管理、变更管理和需求跟踪。需求跟踪是避免软件在开发过程中与需求基线不一致或者偏离的风险，变更管理指以可控，一致的方式进行需求基线中需求的变更处理。</li>
-<li>简述需求规格说明书的作用<br>帮助回忆之前的需求的工作，通过回忆，看是否有需求问题。<br>对需求分析提供解决方案<br>后续活动的依据<br>作为双方协议的组成部分。</li>
-</ol>
-<h2 id="论述"><a href="#论述" class="headerlink" title="论述"></a>论述</h2><ol>
-<li>谈一谈一个需求分析师的主要工作<br>(1)进行需求调研，获取用户需求<br>(2)进行系统规划，设计客户信息化管理的蓝图<br>(3)设计数据模型；<br>(4)设计软件功能;<br>(5)设计软件界面，绘制软件原型;<br>(6)召开需求评审会，收集各方面的意见，根据意见修改设计<br>(7)指导开发，协助测试<br>(8)进行软件变更需求分析，设计变更解决方案</li>
-<li>问卷调查法作为需求收集方法，我们在使用的时候应考虑哪些问题，他的优势与局限有哪些？<br>应考虑：<br>1）设计的问题必须符合客观实际情况，<br>2）不同的答题问卷选择不同的答题者<br>3）问题的内容要具体，单一，通俗易懂，表述要准确，简单明了<br>优势：<br>1）对于调研者，不需要多次面对面沟通就能获取大量有用的信息。<br>2）对于被调研者，不需要打断自己的工作，可以合理安排回答的时间，还可以进行更仔细的思考。<br>局限性：一是限于答卷者的态度、相关的业务特点与文字能力；<br>二是限于调查问卷的编写质量。</li>
-</ol>
-
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls"
-                data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-            <ul id="audio-list" style="display:none">
-                
-                
-                <li title='0' data-url='/statics/Lemon1.mp3'></li>
-                
-                    
-            </ul>
-            
-            
-            <div class="post-nav">
-                <hr>
-                
-                    <div class="post-nav-item">Previous Post:<a href="/2020/07/15/needn'tjQuery/" rel="prev" 
-                        title="jQuery and Vanilla JS">jQuery and Vanilla JS
-                      </a></div>
-                
-                
-                    <div class="post-nav-item">Next Post:<a href="/2020/07/14/chromedev-use/" rel="next" 
-                        title="Chrome devtools">Chrome devtools</a></div>
-                                
-            </div>   
-                        
-            
-            
-    <div id='gitalk-container' class="comment link"
-        data-ae='true'
-        data-ci='ec894e2b66f752e8b7fb'
-        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
-        data-r='blog-comments'
-        data-o='TriDiamond'
-        data-a='TriDiamond'
-        data-d=''
-    >Comments</div>
-
-
-            
-            
-        </div>
-        <div class="sidebar">
-            <div class="box animated fadeInRight">
-                <div class="subbox">
-                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1573019751/TriDiamond_logo_ui_xeublz.jpg" height=300 width=300></img>
-                    <p>li Chengbin</p>
-                    <span>Think like an artist, develop like an artisan</span>
-                    <dl>
-                        <dd><a href="https://github.com/TriDiamond" target="_blank"><span
-                                    class=" iconfont icon-github"></span></a></dd>
-                        <dd><a href="https://twitter.com/TriDiamond6" target="_blank"><span
-                                    class=" iconfont icon-twitter"></span></a></dd>
-                        <dd><a href="https://stackoverflow.com/users/7602324/tridiamond?tab=profile" target="_blank"><span
-                                    class=" iconfont icon-stack-overflow"></span></a></dd>
-                    </dl>
-                </div>
-                <ul>
-                    <li><a href="/">18 <p>Articles</p></a></li>
-                    <li><a href="/categories">0 <p>Categories</p></a></li>
-                    <li><a href="/tags">0 <p>Tags</p></a></li>
-                </ul>
-            </div>
-            
-            
-            
-            <div class="box sticky animated fadeInRight faster">
-                <div id="toc" class="subbox">
-                    <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#填空"><span class="toc-number">1.</span> <span class="toc-text">填空</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#名词解释"><span class="toc-number">1.1.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简答"><span class="toc-number">1.2.</span> <span class="toc-text">简答</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#论述"><span class="toc-number">1.3.</span> <span class="toc-text">论述</span></a></li></ol></li></ol>
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-</div>
-
-    </div>
-</div>
-    <div id="back-to-top" class="animated fadeIn faster">
-        <div class="flow"></div>
-        <span class="percentage animated fadeIn faster">0%</span>
-        <span class="iconfont icon-top02 animated fadeIn faster"></span>
-    </div>
-</body>
-<footer>
-    <p class="copyright" id="copyright">
-        &copy; 2021
-        <span class="gradient-text">
-            li Chengbin
-        </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme
-        <span class="gradient-text">
-            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-        </span>
-        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.5" target="_blank" rel="noopener">v1.4.5</a></small>
-    </p>
-</footer>
-
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script>
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX", "TeX"],
-      linebreaks: {
-        automatic: true
-      },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"]
-      ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      noUndefined: {
-        attributes: {
-          mathcolor: "red",
-          mathbackground: "#FFEEEE",
-          mathsize: "90%"
-        }
-      },
-      Macros: {
-        href: "{}"
-      }
-    },
-    messageStyle: "none"
-  });
-</script>
-<script>
-  function initialMathJax() {
-    MathJax.Hub.Queue(function () {
-      var all = MathJax.Hub.getAllJax(),
-        i;
-      // console.log(all);
-      for (i = 0; i < all.length; i += 1) {
-        console.log(all[i].SourceElement().parentNode)
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  }
-
-  function reprocessMathJax() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    }
-  }
-</script>
-
-
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
- 
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-  
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/obsidian.js"></script>
-<script src="/js/jquery.truncate.js"></script>
-<script src="/js/search.js"></script>
- 
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
- 
-<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
- 
-<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
- 
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-  
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
-   
-<script src="/js/busuanzi.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-    if ($('span[id^="busuanzi_"]').length) {
-      initialBusuanzi();
-    }
-  });
-</script>
- 
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
-
-
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
- 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-149874671-1');
-</script>
- 
-
-<script>
-  function initialTyped() {
-    var typedTextEl = $('.typed-text');
-    if (typedTextEl && typedTextEl.length > 0) {
-      var typed = new Typed('.typed-text', {
-        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
-        typeSpeed: 90,
-        loop: true,
-        loopCount: Infinity,
-        backSpeed: 20,
-      });
-    }
-  }
-
-  if ($('.article-header') && $('.article-header').length) {
-    $(document).ready(function () {
-      initialTyped();
-    });
-  }
-</script>
-
-
-
-
- <!-- 例：百度统计 --> <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?your_code"; var s = document.getElementsByTagName("script")[0];  s.parentNode.insertBefore(hm, s); })(); </script> 
-
-</html>
+    if page.comments
+      include _partial/comments.pug
